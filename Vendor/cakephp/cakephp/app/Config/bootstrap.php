@@ -1,7 +1,7 @@
 <?php
 // Load Composer autoload.
-// change $root to root if needed
-$root = '..\..\..\..\..';
+// change $root to ROOT if needed
+$root = '../../../../..';
 
 require($root .'/Vendor/autoload.php');
 
