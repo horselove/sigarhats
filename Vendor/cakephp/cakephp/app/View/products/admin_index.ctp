@@ -1,7 +1,8 @@
-<?= $this->Html->link('Add new Product', [ 'action' => 'admin_add' ], ['class' => ''] ); ?><br>
+<?= $this->Html->link('Add new Product', [ 'action' => 'admin_add' ], ['class' => ''] ); ?><br><br>
+<?= $this->Html->link('Add or edit materials', [ 'action' => 'admin_index', 'controller' => 'materials' ], ['class' => ''] ); ?><br><br>
 <?= $this->Html->link('Add or edit concept', [ 'action' => 'admin_index', 'controller' => 'concepts'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
-<?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br>
+<?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
 <table>
 <tr>
 		<th><?= $this->Paginator->sort('Neck Lable'); ?></th>
