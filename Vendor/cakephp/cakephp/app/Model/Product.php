@@ -25,17 +25,23 @@ class Product extends AppModel
 	} 	
 
 	public $belongsTo = [
-		'sizes' =>[
+		'sizes' => [
 			'className' => 'sizes',
 			'foreignKey' => 'size_id'
 		],
-		'concepts' =>[
+		'concepts' => [
 			'className' => 'concepts',
 			'foreignKey' => 'concept_id'
 		],
-		'collections' =>[
+		'collections' => [
 			'className' => 'collections',
 			'foreignKey' => 'concept_id'
+		],
+		'user_avatars' => [
+			'className' => 'user_avatars',
+			//'type' => 'INNER',
+			'fields' => 'user_avatars.product_id',
+			'foreignKey' => 'id'
 		]		
 	];
 

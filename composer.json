@@ -3,6 +3,7 @@
     "description" : "A simple demonstration",
     "require": {
         "php" : ">=5.4",
+        "josegonzalez/cakephp-upload": "1.1.1",
         "cakephp/cakephp": "2.5.*",
         "friendsofcake/crud" : "3.*",
         "cakephp/debug_kit": "2.2.*"

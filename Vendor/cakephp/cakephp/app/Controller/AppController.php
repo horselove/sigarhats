@@ -48,7 +48,7 @@ class AppController extends Controller {
       ]
     ],
     'Crud.Crud' => [
-      'actions' => ['index', 'add', 'edit', 'view', 'admin_index']
+      'actions' => ['index', 'view', 'admin_add', 'admin_edit', 'admin_index', 'admin_delete']
     ]
   ];
 

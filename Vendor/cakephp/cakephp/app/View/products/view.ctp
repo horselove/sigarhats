@@ -2,9 +2,9 @@
  	'controller' => 'products',
   	'action' => 'index']); ?>
 
- <h1><?= $product['Product']['product_name']; ?></h1>
+ <h1><?= $product['Product']['name']; ?></h1>
 
- <?= $product['Product']['product_description']; ?>
+ <?= $product['Product']['description']; ?>
 
 
 

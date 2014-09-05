@@ -31,13 +31,11 @@ class ProductsController extends AppController
 			return $this->Crud->execute();
 		}
 
-		public function view($id = null) {
+		public function view ($id = null) {
 			$this->Crud->on('beforeFind', function (CakeEvent $event) {
-				$event->subject->query['contain']['user_avatar'] = [];
-				$event->subject->query['contain']['product_imgs'] = [];
-				$event->subject->query['contain']['concept'] = [];
-				$event->subject->query['contain']['size'] = [];
+
 			});
+
 
 			$this->set('title_for_layout', 'View Product');
 	        
@@ -54,24 +52,39 @@ class ProductsController extends AppController
 */		
 	public function admin_index() {
 	
-		$this->Crud->on('beforeFind', function (CakeEvent $event) {
-				$event->subject->query['contain']['user_avatar'] = [];
-				$event->subject->query['contain']['product_imgs'] = [];
-				$event->subject->query['contain']['concept'] = [];
-				$event->subject->query['contain']['size'] = [];
-		});
 
-	return $this->Crud->execute();
+		return $this->Crud->execute();
 
 	}
 	
-	public function add(){
-		
+	public function admin_add(){
+		$this->Crud->on('afterSave', function (CakeEvent $event) {
+			return $this->redirect('/products/admin_index');
+		});		
+
+		return $this->Crud->execute();
 
 	}
 	
-	public function edit($id = null){
+	public function admin_edit($id = null){
+		$this->Crud->on('afterSave', function (CakeEvent $event) {
+			return $this->redirect('/products/admin_edit/'.$this->Product->id );
+		});		
+		return $this->Crud->execute();
 
+	}
+
+	public function admin_delete ($id = null) {
+		$this->Product->id = $id;
+		if (!$this->Product->exists()) {
+			throw new NotFoundException('Invalid product');
+		}
+		if ($this->Product->delete()) {
+			$this->Session->setFlash('The productmod has been deleted.');
+		} else {
+			$this->Session->setFlash('The productmod could not be deleted. Please, try again.');
+		}
+		return $this->redirect(array('action' => 'admin_index'));
 	}
 
 }
