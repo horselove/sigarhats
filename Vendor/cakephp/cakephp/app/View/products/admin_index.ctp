@@ -3,6 +3,8 @@
 <?= $this->Html->link('Add or edit concept', [ 'action' => 'admin_index', 'controller' => 'concepts'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
+<?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?> 
+
 <table>
 <tr>
 		<th><?= $this->Paginator->sort('Neck Lable'); ?></th>
@@ -33,7 +35,7 @@
 	<td><?= $product['sizes']['name']; ?></td>
 	<td> YES</td>
 	<td>img</td>
-	<td>YES</td>
+	<td><?php if($product['Product']['featured'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
 	<td>NOT YET</td>
 	<td><?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']],  	['class' => ''] );?> </td>
 	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']],  	['class' => ''] );?> </td>

@@ -4,9 +4,10 @@
 
 	<?= $this->Form->input( 'name', ['name', 'placeholder' => 'Material name'] ); ?>
 
-	
+	<?php echo $this->Form->input('img', [ 'type' => 'file' ]); ?>
+	<?php echo $this->Form->input('img_dir', [ 'type' => 'hidden' ]); ?>
 
-	<?= $this->form->submit( 'Insert size' )?>
+	<?= $this->Form->submit( 'Insert size' )?>
 
 
 <?php echo $this->Form->end(); ?>

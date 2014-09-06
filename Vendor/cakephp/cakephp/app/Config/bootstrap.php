@@ -17,6 +17,8 @@ App::build(['Plugin' => [$root . DS . 'Plugin' . DS]]);
 // Load plugins
 CakePlugin::load('DebugKit');
 CakePlugin::load('Crud');
+CakePlugin::load('Upload');
+
 
 /**
  * This file is loaded automatically by the app/webroot/index.php file after core.php

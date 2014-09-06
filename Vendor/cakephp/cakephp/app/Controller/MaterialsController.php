@@ -25,11 +25,11 @@ class MaterialsController extends AppController {
 	}
 
 	public function admin_delete ($id = null) {
-		$this->material->id = $id;
-		if (!$this->material->exists()) {
+		$this->Material->id = $id;
+		if (!$this->Material->exists()) {
 			throw new NotFoundException('Invalid product');
 		}
-		if ($this->material->delete()) {
+		if ($this->Material->delete()) {
 			$this->Session->setFlash('The material has been deleted.');
 		} else {
 			$this->Session->setFlash('The material could not be deleted. Please, try again.');

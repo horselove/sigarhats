@@ -26,4 +26,4 @@
 
 <?php unset($product); ?>
 
-<?=  $this->Html->link('Log out', array('controller' => 'users', 'action' => 'logout')); ?> 
+<?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?> 
