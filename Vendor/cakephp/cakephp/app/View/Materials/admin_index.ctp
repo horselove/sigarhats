@@ -4,12 +4,22 @@
 <table>
 <tr>
 	<th>Name of size</th>
+	<th>Image</th>
 	<th>Edit</th>
 	<th>Delete</th>
 </tr>
 <?php foreach($materials as $material): ?>
+	<?php  
+		$imageUrl = $this->Html->assetUrl('/app/webroot/files/material/img/'.$material['Material']['img_dir'].'/'.$material['Material']['img'], array(
+        // note: only required if you need the
+        // URL -including- http://example.com
+        'fullBase'   => true,
+        'pathPrefix' => IMAGES_URL
+    ));
+ ?>
 <tr>
 	<td><?= $material['Material']['name']; ?></td>
+	<td><?= $this->Html->image( $imageUrl, ['alt' => $material['Material']['name'].' Material Sigarhats'] ) ?></td>
 	<td><?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $material['Material']['id']], ['class' => ''] );?></td>
 	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $material['Material']['id']], ['class' => ''] );?></td>
 </tr>

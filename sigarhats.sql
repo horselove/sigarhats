@@ -1,44 +1,36 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Vært: 127.0.0.1
--- Genereringstid: 28. 08 2014 kl. 14:45:37
--- Serverversion: 5.5.32
--- PHP-version: 5.4.19
+-- Vært: localhost:8889
+-- Genereringstid: 08. 09 2014 kl. 14:58:13
+-- Serverversion: 5.5.34
+-- PHP-version: 5.5.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `sigarhats`
 --
-CREATE DATABASE IF NOT EXISTS `sigarhats` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `sigarhats`;
 
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `avatar_gender`
+-- Struktur-dump for tabellen `avatar_genders`
 --
 
-CREATE TABLE IF NOT EXISTS `avatar_gender` (
-  `gender_id` int(11) NOT NULL AUTO_INCREMENT,
-  `avatar_name` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`gender_id`)
+CREATE TABLE `avatar_genders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Data dump for tabellen `avatar_gender`
+-- Data dump for tabellen `avatar_genders`
 --
 
-INSERT INTO `avatar_gender` (`gender_id`, `avatar_name`) VALUES
+INSERT INTO `avatar_genders` (`id`, `name`) VALUES
 (1, 'Male'),
 (2, 'Female'),
 (3, 'anonymous');
@@ -49,19 +41,19 @@ INSERT INTO `avatar_gender` (`gender_id`, `avatar_name`) VALUES
 -- Struktur-dump for tabellen `collections`
 --
 
-CREATE TABLE IF NOT EXISTS `collections` (
+CREATE TABLE `collections` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Data dump for tabellen `collections`
 --
 
 INSERT INTO `collections` (`id`, `name`) VALUES
-(1, '2013'),
-(2, '2014');
+(1, '2014'),
+(2, '2013');
 
 -- --------------------------------------------------------
 
@@ -69,20 +61,42 @@ INSERT INTO `collections` (`id`, `name`) VALUES
 -- Struktur-dump for tabellen `concepts`
 --
 
-CREATE TABLE IF NOT EXISTS `concepts` (
+CREATE TABLE `concepts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Data dump for tabellen `concepts`
 --
 
 INSERT INTO `concepts` (`id`, `name`, `description`) VALUES
-(1, 'Two-of-a-kind', 'Two-of-a-kind'),
-(2, 'Residual-materials', 'Residual-materials');
+(1, 'Two-of-a-kind', 'Is the shit'),
+(2, 'Residual-materials', 'Residual-materials'),
+(4, 'deb er godss', 'dsada hej');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur-dump for tabellen `materials`
+--
+
+CREATE TABLE `materials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img_dir` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+
+--
+-- Data dump for tabellen `materials`
+--
+
+INSERT INTO `materials` (`id`, `name`, `img`, `img_dir`) VALUES
+(18, 'asdasd', 'Fotografi den 31-08-14 kl. 13.09.jpg', '18');
 
 -- --------------------------------------------------------
 
@@ -90,7 +104,7 @@ INSERT INTO `concepts` (`id`, `name`, `description`) VALUES
 -- Struktur-dump for tabellen `products`
 --
 
-CREATE TABLE IF NOT EXISTS `products` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `size_id` int(11) NOT NULL,
   `concept_id` int(11) NOT NULL,
@@ -101,16 +115,20 @@ CREATE TABLE IF NOT EXISTS `products` (
   `active` int(1) NOT NULL,
   `featured` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
 
 --
 -- Data dump for tabellen `products`
 --
 
 INSERT INTO `products` (`id`, `size_id`, `concept_id`, `collection_id`, `name`, `description`, `price`, `active`, `featured`) VALUES
-(1, 1, 1, 1, 'Emil fladhjul', 'hahdashdhadhahd', 233, 1, 1),
+(1, 1, 2, 1, 'Emil fladhjul', 'hahdashdhadhahd', 233, 1, 1),
 (2, 1, 1, 1, 'Baseball cap', 'Gode gamele baseball cap', 500, 1, 0),
-(3, 2, 2, 1, 'johnjohn', 'HALLAJHAS', 233.5, 0, 0);
+(58, 1, 1, 1, 'john', 'john', 233, 1, 1),
+(62, 2, 2, 1, 'asdasd', 'asdas', 3232, 0, 0),
+(63, 1, 2, 1, 'hej', 'hej', 32, 0, 0),
+(64, 1, 1, 1, 'john john', 'asda', 2323, 1, 0),
+(66, 1, 2, 1, 'john', 'den er fed', 233, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -118,13 +136,13 @@ INSERT INTO `products` (`id`, `size_id`, `concept_id`, `collection_id`, `name`, 
 -- Struktur-dump for tabellen `product_imgs`
 --
 
-CREATE TABLE IF NOT EXISTS `product_imgs` (
-  `img_id` int(11) NOT NULL AUTO_INCREMENT,
-  `img_src` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `img_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `fk_product` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE `product_imgs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `src` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `product_id` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `feature_images` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`img_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -133,19 +151,19 @@ CREATE TABLE IF NOT EXISTS `product_imgs` (
 -- Struktur-dump for tabellen `sizes`
 --
 
-CREATE TABLE IF NOT EXISTS `sizes` (
+CREATE TABLE `sizes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Data dump for tabellen `sizes`
 --
 
 INSERT INTO `sizes` (`id`, `name`) VALUES
-(1, '55'),
-(2, '56');
+(1, '55 CM'),
+(2, '56 CM');
 
 -- --------------------------------------------------------
 
@@ -153,7 +171,7 @@ INSERT INTO `sizes` (`id`, `name`) VALUES
 -- Struktur-dump for tabellen `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -161,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
 -- Data dump for tabellen `users`
@@ -169,28 +187,34 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `created`, `modified`) VALUES
 (7, 'admin', '0c5ea0d43e32ac030dbf382d86286e0a55c3d5a3', 'admin', '2014-08-22 11:41:39', '2014-08-22 11:41:39'),
-(8, 'hej', '72486a429136038963d3e4d04636579e131fb1af', 'admin', '2014-08-26 10:50:34', '2014-08-26 10:50:34');
+(8, 'hej', '72486a429136038963d3e4d04636579e131fb1af', 'admin', '2014-08-26 10:50:34', '2014-08-26 10:50:34'),
+(9, 'john', '6cbcb4da9badd9d2dc62d3dafe2668a125d47ccd', 'admin', '2014-09-04 11:27:56', '2014-09-04 11:27:56');
 
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `user_avatar`
+-- Struktur-dump for tabellen `user_avatars`
 --
 
-CREATE TABLE IF NOT EXISTS `user_avatar` (
-  `avatar_id` int(11) NOT NULL AUTO_INCREMENT,
-  `avatar_necklabel` int(11) NOT NULL,
-  `fk_product` int(11) NOT NULL,
-  `avatar_name` int(11) NOT NULL,
-  `avatar_state` int(11) NOT NULL,
-  `avatar_location` int(11) NOT NULL,
-  `avatar_birth` int(11) NOT NULL,
-  `fk_gender` int(11) NOT NULL,
-  `avatar_email` int(11) NOT NULL,
-  `avatar_img` int(11) NOT NULL,
-  PRIMARY KEY (`avatar_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+CREATE TABLE `user_avatars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `necklabel` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `birth` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `gender_id` int(1) NOT NULL,
+  `email` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `size_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Data dump for tabellen `user_avatars`
+--
+
+INSERT INTO `user_avatars` (`id`, `necklabel`, `product_id`, `name`, `location`, `birth`, `gender_id`, `email`, `img`, `size_id`) VALUES
+(1, 'john john', 1, 'Adam Zaken', 'Copenhagen', '280390', 1, 'adamzakenweb@gmail.com', 'somerandom.jpg', 0),
+(2, 'johnjohn', 2, 'John Zaken', 'UK', '2929392', 2, 'something@gmail.com', 'jjehah.jpeg', 0),
+(3, 'hansi-29293#222', 1, 'Emil Johnson', 'Frb', '020490', 2, 'jsjsi@gmail.com', 'jsjsj.jpg', 0);

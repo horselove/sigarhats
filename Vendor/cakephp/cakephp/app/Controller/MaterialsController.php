@@ -4,6 +4,7 @@
 class MaterialsController extends AppController {
 
 	public function admin_index() {
+ 
 		return $this->Crud->execute();
 	}
 	
