@@ -9,6 +9,9 @@
 /dist
 /tags
 *.mo
+.sass-cache/
+node_modules
+app/webroot/vendor/
 
 # IDE and editor specific files #
 #################################

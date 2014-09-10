@@ -1,0 +1,26 @@
+{
+  "name": "Sigarhats",
+  "version": "0.0.1",
+  "description": "Sigarhats is a commerce website for silas Gãrtner",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^0.9.1",
+    "gulp": "^3.8.0",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-compass": "^1.1.9",
+    "gulp-compressor": "^0.1.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-load-plugins": "^0.5.1",
+    "gulp-plumber": "^0.6.3",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.0",
+    "gulp-watch": "^0.6.6"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/horselove/sigarhats"
+  }
+}
