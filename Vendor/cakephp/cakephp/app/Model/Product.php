@@ -9,17 +9,25 @@ App::uses('AppModel', 'Model');
 
 class Product extends AppModel 
 {
+    
+	//images rules
+    public $actsAs = array(
+        'Upload.Upload' => array(
+            'resume'
+        )
+    );
 
+    public $hasMany = array(
+        'Product_img' => array(
+            'className' => 'Product_img',
+            'foreignKey' => 'product_id',
+            'conditions' => array(
+                'Product_img.src' => 'Product',
+            ),
+        ),
+    );
 
 	public function beforeValidate($options = []) {
-
-		// Prepare data form <select multiple> to be saved hasMany relations
-		//change the values
-		if (!empty($this->data['size']['id'])) {
-			$this->data['size'] = array_map(function ($id) {
-				return ['id' => $id];
-			}, $this->data['size']['id']);
-		}
 
 		return parent::beforeValidate($options);
 	} 	

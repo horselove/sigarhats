@@ -12,7 +12,8 @@
 
 	<?= $this->Form->input( 'active', [ 'type' => 'hidden', 'value' => '1' ] ); ?>
 	<?= $this->Form->input( 'featured',  [ 'options' =>  ['0' => 'Not featured', '1' => 'featured product' ] ] ); ?>
-	<?= $this->Form->file( 'Document.submittedfile' ); ?>
+
+	<?= $this->Form->input( 'image.', [ 'type' => 'file', 'multiple' => true  ] ); ?>
 	<?= $this->form->submit( 'Insert product' )?>
 
 <?php echo $this->Form->end(); ?>

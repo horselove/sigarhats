@@ -7,7 +7,7 @@
 	<?php echo $this->Form->input('img', [ 'type' => 'file' ]); ?>
 	<?php echo $this->Form->input('img_dir', [ 'type' => 'hidden' ]); ?>
 
-	<?= $this->Form->submit( 'Insert size' )?>
+	<?= $this->Form->submit( 'Insert new material' )?>
 
 
 <?php echo $this->Form->end(); ?>
