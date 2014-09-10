@@ -1,26 +1,24 @@
-<?php 
-
-
+<?php
 class MaterialsController extends AppController {
 
 	public function admin_index() {
- 
+
 		return $this->Crud->execute();
 	}
-	
+
 	public function admin_add(){
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/materials/admin_index');
-		});		
+		});
 
 		return $this->Crud->execute();
 
 	}
-	
+
 	public function admin_edit($id = null){
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/materials/admin_edit/'.$this->material->id );
-		});		
+		});
 		return $this->Crud->execute();
 
 	}

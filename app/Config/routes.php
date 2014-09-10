@@ -25,16 +25,17 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 //set landing page
-	Router::connect('/', array('controller' => 'products', 'action' => 'index'));
-
-// when log in dashboard
-	Router::connect('/admin', array('controller' => 'users', 'action' => 'admin_dashboard', 'admin' => true));
-
+	Router::connect('/', ['controller' => 'pages', 'action' => 'display', 'home']);
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+
+
+// when log in dashboard
+	Router::connect('/admin', array('controller' => 'users', 'action' => 'admin_dashboard', 'admin' => true));
+
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

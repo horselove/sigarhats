@@ -1,0 +1,42 @@
+// Hero.scss
+// Hero contains video and js logik too
+
+
+
+
+
+.hero {
+    position: relative;
+    padding: $ws-xlarge 0 $ws-xlarge 0;
+
+    &:before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .hero__media {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+    }
+
+    .hero__inner {
+        position: relative;
+        z-index: 3;
+    }
+}

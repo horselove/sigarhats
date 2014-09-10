@@ -1,0 +1,44 @@
+// Teaser.scss
+// Teaser is a typographic module which can hold 3 lines of text
+
+
+.teaser {
+    text-align: center;
+
+    &.teaser__on-dark {
+        color: darken(#fff, 20%);
+
+        .teaser__small-line {
+            color: inherit;
+        }
+        .teaser__heading-line {
+            color: #FFF;
+        }
+        .teaser__link {
+            color: inherit;
+        }
+    }
+
+    .teaser__small-line {
+        margin-top: 0;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .teaser__heading-line {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .teaser__link {
+        text-transform: uppercase;
+        font-size: rem-calc(16);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

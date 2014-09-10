@@ -1,3 +1,22 @@
+Getting up and running
+=======
+
+The frontend worklof consists of, node.js package manager, bower, and Gulp.
+
+###This is how you install it:
+
+1. Install http://nodejs.org/
+2. In terminal: `npm install -g gulp`
+3. In terminal: `npm install -g bower`
+4. In terminal, project root: `sudo npm install`
+5. In terminal, project root: `bower install`
+
+To run a proxy with live reload, sass compiling and js optimizing
+
+1. In terminal, project root: `gulp serve`
+
+
+
 CakePHP
 =======
 

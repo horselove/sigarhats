@@ -1,0 +1,10 @@
+// sections.scss
+
+.section--page {
+    @include clearfix();
+    padding: $ws-large 20px;
+}
+
+.section--dim {
+    background-color: $white-smoke;
+}

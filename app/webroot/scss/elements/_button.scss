@@ -1,0 +1,102 @@
+// _button.scss
+// Author: Emil Møller
+// Aug. 2014
+
+
+
+
+// 2. Styles
+// 2.1 Ghost button
+
+// 3. Shapes
+// 3.1 Round button
+
+
+
+
+// 1. Defaults
+.button {
+    transition: none;
+    cursor: default;
+    padding: 14px 14px;
+
+    font-size: rem-calc(15);
+    background-color: #3f3f3f;
+    &:hover {
+      background-color: #222;
+    }
+
+    & > * {
+        cursor: default;
+    }
+}
+
+
+
+
+
+
+// 2 Styles
+.button {
+
+    // 2.1 Ghost button
+    &.button--ghost {
+        background-color: transparent;
+        border: 1px solid $iron;
+        color: $steel;
+
+        &:hover {
+            background-color: $white-smoke;
+            border: 1px solid $aluminum;
+        }
+    }
+}
+
+
+
+
+
+// 3. Shapes
+.button {
+
+    // 3.1 Round Button
+
+    /*
+     * Round button inherits the style from ordinary button styles
+     * but are visually exposed in an after element
+     * The content in the button should be placed in a span or another inline element.
+    */
+
+    &.button--round {
+        visibility: hidden;
+        width: 40px;
+        padding: 0;
+
+        &:after {
+            @extend .button;
+            visibility: visible;
+            position: relative;
+            z-index: 1;
+            content: "";
+            display: block;
+            width: 100%;
+            height:0;
+            margin-bottom: 0;
+            padding-bottom: 100%;
+            border-radius: 99px;
+        }
+
+        & > * {
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            float:left;
+            width:100%;
+            margin-top:-0.5em;
+            padding-top:50%;
+            line-height:1em;
+            text-align:center;
+            color:inherit;
+        }
+    }
+}

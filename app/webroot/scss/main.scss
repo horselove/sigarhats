@@ -1,1 +1,83 @@
-// Sigarhats main.scss
+// Generator-project
+// By Emil Møller
+// August 2014
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// bower:scss
+// endbower
+
+
+
+/**
+ * The first import is normalizing for all browsers
+ * Including foundation functions before variables so i can be used there.
+ */
+
+ @import
+   "../vendor/bower_components/foundation/scss/normalize",
+   "../vendor/bower_components/foundation/scss/foundation/functions",
+   "variables",
+   "foundation-settings";
+
+ // Behold, here are all the Foundation components.
+ @import
+   "../vendor/bower_components/foundation/scss/foundation/components/grid",
+   "../vendor/bower_components/foundation/scss/foundation/components/accordion",
+   "../vendor/bower_components/foundation/scss/foundation/components/alert-boxes",
+   "../vendor/bower_components/foundation/scss/foundation/components/block-grid",
+   "../vendor/bower_components/foundation/scss/foundation/components/breadcrumbs",
+   "../vendor/bower_components/foundation/scss/foundation/components/button-groups",
+   "../vendor/bower_components/foundation/scss/foundation/components/buttons",
+   "../vendor/bower_components/foundation/scss/foundation/components/clearing",
+   "../vendor/bower_components/foundation/scss/foundation/components/dropdown",
+   "../vendor/bower_components/foundation/scss/foundation/components/dropdown-buttons",
+   "../vendor/bower_components/foundation/scss/foundation/components/flex-video",
+   "../vendor/bower_components/foundation/scss/foundation/components/forms",
+   "../vendor/bower_components/foundation/scss/foundation/components/inline-lists",
+   "../vendor/bower_components/foundation/scss/foundation/components/joyride",
+   "../vendor/bower_components/foundation/scss/foundation/components/keystrokes",
+   "../vendor/bower_components/foundation/scss/foundation/components/labels",
+   "../vendor/bower_components/foundation/scss/foundation/components/magellan",
+   "../vendor/bower_components/foundation/scss/foundation/components/orbit",
+   "../vendor/bower_components/foundation/scss/foundation/components/pagination",
+   "../vendor/bower_components/foundation/scss/foundation/components/panels",
+   "../vendor/bower_components/foundation/scss/foundation/components/pricing-tables",
+   "../vendor/bower_components/foundation/scss/foundation/components/progress-bars",
+   "../vendor/bower_components/foundation/scss/foundation/components/range-slider",
+   "../vendor/bower_components/foundation/scss/foundation/components/reveal",
+   "../vendor/bower_components/foundation/scss/foundation/components/side-nav",
+   "../vendor/bower_components/foundation/scss/foundation/components/split-buttons",
+   "../vendor/bower_components/foundation/scss/foundation/components/sub-nav",
+   "../vendor/bower_components/foundation/scss/foundation/components/switch",
+   "../vendor/bower_components/foundation/scss/foundation/components/tables",
+   "../vendor/bower_components/foundation/scss/foundation/components/tabs",
+   "../vendor/bower_components/foundation/scss/foundation/components/thumbs",
+   "../vendor/bower_components/foundation/scss/foundation/components/tooltips",
+   "../vendor/bower_components/foundation/scss/foundation/components/top-bar",
+   "../vendor/bower_components/foundation/scss/foundation/components/type",
+   "../vendor/bower_components/foundation/scss/foundation/components/offcanvas",
+   "../vendor/bower_components/foundation/scss/foundation/components/visibility";
+
+@import
+    "base/helpers",
+    "base/typography",
+    "base/whitespace",
+    "base/mixins"
+;
+
+@import
+    "elements/select",
+    "elements/button"
+;
+
+@import
+    "modules/top-bar",
+    "modules/teaser",
+    "modules/hero",
+    "modules/sections",
+    "modules/product-list",
+    "modules/block-lists",
+    "modules/pagination"
+;
