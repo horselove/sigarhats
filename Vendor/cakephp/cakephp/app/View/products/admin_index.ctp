@@ -35,7 +35,7 @@
 	<td><?= $product['sizes']['name']; ?></td>
 	<td> YES</td>
 	<td>img</td>
-	<td><?php if($product['Product']['featured'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
+	<td><?php if($product['Product']['active'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
 	<td>NOT YET</td>
 	<td><?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']],  	['class' => ''] );?> </td>
 	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']],  	['class' => ''] );?> </td>
