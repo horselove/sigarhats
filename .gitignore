@@ -13,6 +13,7 @@ tags
 .sass-cache/
 node_modules
 app/webroot/vendor/
+app/webroot/files
 
 # IDE and editor specific files #
 #################################
