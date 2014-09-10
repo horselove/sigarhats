@@ -54,6 +54,7 @@ gulp.task('jsconcat', function() {
     bowersrc +'jquery/dist/jquery.min.js',
     bowersrc +'modernizr/modernizr.js',
     bowersrc +'foundation/js/foundation.min.js',
+    bowersrc +'jquery.lazyload/jquery.lazyload.min.js'
   ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('app/webroot/js/'))

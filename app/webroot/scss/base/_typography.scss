@@ -1,0 +1,125 @@
+// typography.scss
+
+// 1. Font imports
+// 2. Typography settings
+// 3. Document settings
+// 4. Typographic types
+// 5. Typographic blocks
+// 6. HTML elements
+
+
+
+
+
+
+
+// 1. Font imports
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,700italic,900italic|Cardo:400,700,400italic);
+
+
+
+
+
+// 2. Typography settings
+$primary-font-style: 'Lato', sans-serif !default;
+$secondary-font-style: 'Cardo', serif !default;
+
+
+
+
+
+// 3. Document settings
+body {
+    * {
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+
+
+
+// 4. Typographic types
+.small-leading {
+    margin-bottom: 15px;
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+    color: $steel;
+}
+
+.medium-leading {
+    margin-bottom: 25px;
+    font-family: $secondary-font-style;
+    font-size: rem-calc(22);
+    text-transform: uppercase;
+    color: $steel;
+    letter-spacing: 1px;
+}
+
+.large-leading {
+    margin-bottom: 25px;
+    font-family: $secondary-font-style;
+    font-size: rem-calc(28);
+    text-transform: uppercase;
+    color: $steel;
+    letter-spacing: 2px;
+}
+
+.alt-text-link {
+    text-transform: uppercase;
+    color: $base;
+
+    &:hover {
+        color: darken($base, 20%);
+    }
+}
+
+
+
+
+
+// 5. Typographic blocks
+
+/**
+ * This element is a small and a large title with a border in the middle
+ *
+ * <div class="page-heading">
+ *   <p class="small-leading">Handcrafted</p>
+ *   <h2 class="medium-leading">hats & caps</h2>
+ * </div>
+*/
+
+.page-heading {
+    text-align: center;
+
+    .small-leading {
+        margin-bottom: 35px;
+    }
+
+    .medium-leading {
+        position: relative;
+        margin-bottom: 0;
+        display: inline-block;
+        clear: both;
+
+        &:before {
+            content:"";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-95px);
+            width: 190px;
+            height: 1px;
+            background-color: lighten($steel, 30%);
+        }
+    }
+}
+
+
+
+
+
+// 6. HTML elements
+
+p {
+    font-size: rem-calc(14);
+}

@@ -1,0 +1,60 @@
+// _Pagination.scss
+// Author: Emil Møller
+// Aug. 2014
+
+
+
+
+
+/*
+ * Pagination consists of two buttons and a
+ * counter in the middle, it can also be presented
+ * without counter, and this module will work as a placeholder
+ * for the two buttons.
+*/
+
+.pagination {
+    @include clearfix;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+
+    .pagination__controls {
+        .button {
+            margin-bottom: 0;
+        }
+    }
+
+    .pagination__nav-left {
+        float: left;
+    }
+
+    .pagination__nav-right {
+        float: right;
+    }
+
+    /*
+     * Pagination count centers the text both vertically and horizontal
+     * by positioning it 50% from top, and pull up with minus margin half it's lineheight.
+    */
+
+    .pagination__count {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        & > * {
+            position: relative;
+            width:100%;
+            margin-top:-0.5em;
+            top:50%;
+            line-height:1em;
+            text-align:center;
+            font-family: $secondary-font-style;
+        }
+    }
+}

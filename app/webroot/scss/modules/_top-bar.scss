@@ -1,0 +1,72 @@
+// Top_bar.scss
+// This is a modification of top bar form foundation framework
+
+.top-bar {
+
+    .top-bar-section ul li > a {
+        padding-left: 0;
+    }
+
+    &.top-bar--centered {
+        text-align: center;
+
+        .top-bar-section--secondary {
+            ul {
+                li {
+                    display: inline-block;
+
+                    & > a {
+                      display: block;
+                      width: 100%;
+                      color: $topbar-link-color;
+                      padding: 0;
+                      padding-left: $topbar-link-padding;
+                      padding-right: $topbar-link-padding;
+                      font-family: $topbar-link-font-family;
+                      font-size: $topbar-link-font-size;
+                      font-weight: $topbar-link-weight;
+                      text-transform: $topbar-link-text-transform;
+                      line-height: $topbar-height;
+                    }
+
+                    &:hover:not(.has-form) > a {
+                      background-color: $topbar-link-bg-hover;
+                      @if ($topbar-link-bg-hover) {
+                        background: $topbar-link-bg-hover;
+                      }
+                      color: $topbar-link-color-hover;
+                    }
+                }
+            }
+        }
+    }
+
+    .top-bar__logo {
+        padding: 0;
+        margin: 5px 0 5px 0;
+
+        @media #{$medium-up} {
+            margin: 0;
+        }
+
+        &.top-bar__logo--centered {
+            margin-left: $topbar-link-padding;
+            margin-right: $topbar-link-padding;
+        }
+    }
+
+    &.top-bar--footer {
+        height: auto;
+        .top-bar-section--secondary {
+            ul {
+                li {
+                    display: block;
+
+                    @media #{$medium-up} {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

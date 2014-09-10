@@ -1,0 +1,34 @@
+/**
+ * Block lists
+ *
+ * 1. block-list--featured - 4 items pr. row on large
+ * 2. block-list--catalogue - 3 items pr. row on large
+*/
+
+
+
+
+.block-list {
+
+    // 1. block-list--feature
+    &.block-list--featured {
+        @include block-grid(1);
+        @media #{$medium-up} {
+            @include block-grid(2);
+        }
+        @media #{$large-up} {
+            @include block-grid(4);
+        }
+    }
+
+    // 2. block-list--catalogue
+    &.block-list--catalogue {
+        @include block-grid(1);
+        @media #{$medium-up} {
+            @include block-grid(2);
+        }
+        @media #{$large-up} {
+            @include block-grid(3);
+        }
+    }
+}

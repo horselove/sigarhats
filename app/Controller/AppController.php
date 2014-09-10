@@ -52,10 +52,10 @@ class AppController extends Controller {
     ]
   ];
 
-    
+
     // Allow nonusers to enter the site
     public function beforeFilter() {
- 
+
     $this->Auth->authenticate = array(
       AuthComponent::ALL => array(
         'userModel' => 'User',
@@ -70,5 +70,5 @@ class AppController extends Controller {
 
     public function index(){
 
-    } 
+    }
 }

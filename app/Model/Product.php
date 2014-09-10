@@ -4,12 +4,12 @@
 * Product model
 *
 **/
-	
+
 App::uses('AppModel', 'Model');
 
-class Product extends AppModel 
+class Product extends AppModel
 {
-    
+
 	//images rules
     public $actsAs = array(
         'Upload.Upload' => array(
@@ -30,7 +30,7 @@ class Product extends AppModel
 	public function beforeValidate($options = []) {
 
 		return parent::beforeValidate($options);
-	} 	
+	}
 
 	public $belongsTo = [
 		'sizes' => [
@@ -50,7 +50,7 @@ class Product extends AppModel
 			//'type' => 'INNER',
 			'fields' => 'user_avatars.product_id',
 			'foreignKey' => 'id'
-		]		
+		]
 	];
 
 }
