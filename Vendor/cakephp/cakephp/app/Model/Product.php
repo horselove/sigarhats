@@ -22,7 +22,7 @@ class Product extends AppModel
             'className' => 'Product_img',
             'foreignKey' => 'product_id',
             'conditions' => array(
-                'Product_img.src' => 'Product',
+                'Product_img.product_id' => 'Product',
             ),
         ),
     );

@@ -2,7 +2,7 @@
 class Product_img extends AppModel {
     public $actsAs = array(
         'Upload.Upload' => array(
-            'attachment' => array(
+            'product_img' => array(
                 'thumbnailSizes' => array(
                     'thumb' => '600w',
                 ),
@@ -13,7 +13,7 @@ class Product_img extends AppModel {
     public $belongsTo = array(
         'Product' => array(
             'className' => 'Product',
-            'foreignKey' => 'foreign_key',
+            'foreignKey' => 'product_id',
         )
     );
 }
