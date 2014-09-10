@@ -1,0 +1,195 @@
+2014-09-10 11:05:24 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/ConnectionManager.php(91): ConnectionManager::_getConnectionObject('default')
+#1 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3498): ConnectionManager::getDataSource('default')
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3525): Model->setSource('products')
+#4 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2921): Model->getDataSource()
+#5 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2893): Model->_readDataSource('all', Array)
+#6 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(1080): PaginatorComponent->paginate(Object(Product), Array, Array)
+#8 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/Action/IndexCrudAction.php(107): Controller->paginate(Object(Product))
+#9 [internal function]: IndexCrudAction->_get()
+#10 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/CrudAction.php(65): call_user_func_array(Array, Array)
+#11 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Component/CrudComponent.php(218): CrudAction->handle(Object(CrudSubject))
+#12 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Controller/ProductsController.php(31): CrudComponent->execute()
+#13 [internal function]: ProductsController->index()
+#14 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#15 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest))
+#17 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-09-10 11:07:34 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:07:34 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:07:54 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 1]
+2014-09-10 11:07:54 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 1, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 1, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:02 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/ConnectionManager.php(91): ConnectionManager::_getConnectionObject('default')
+#1 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3498): ConnectionManager::getDataSource('default')
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3525): Model->setSource('products')
+#4 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2921): Model->getDataSource()
+#5 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2893): Model->_readDataSource('all', Array)
+#6 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(1080): PaginatorComponent->paginate(Object(Product), Array, Array)
+#8 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/Action/IndexCrudAction.php(107): Controller->paginate(Object(Product))
+#9 [internal function]: IndexCrudAction->_get()
+#10 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/CrudAction.php(65): call_user_func_array(Array, Array)
+#11 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Component/CrudComponent.php(218): CrudAction->handle(Object(CrudSubject))
+#12 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Controller/ProductsController.php(31): CrudComponent->execute()
+#13 [internal function]: ProductsController->index()
+#14 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#15 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest))
+#17 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-09-10 11:08:06 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:06 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:27 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:27 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:29 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:29 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:29 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:29 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:52 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/ConnectionManager.php(91): ConnectionManager::_getConnectionObject('default')
+#1 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3498): ConnectionManager::getDataSource('default')
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3525): Model->setSource('products')
+#4 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2921): Model->getDataSource()
+#5 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(2893): Model->_readDataSource('all', Array)
+#6 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(1080): PaginatorComponent->paginate(Object(Product), Array, Array)
+#8 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/Action/IndexCrudAction.php(107): Controller->paginate(Object(Product))
+#9 [internal function]: IndexCrudAction->_get()
+#10 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Crud/CrudAction.php(65): call_user_func_array(Array, Array)
+#11 /Users/emilrunemoller/Documents/Github/cakesigarhats/Plugin/Crud/Controller/Component/CrudComponent.php(218): CrudAction->handle(Object(CrudSubject))
+#12 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Controller/ProductsController.php(31): CrudComponent->execute()
+#13 [internal function]: ProductsController->index()
+#14 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#15 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest))
+#17 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-09-10 11:08:56 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:56 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:58 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:58 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:58 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:58 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:59 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:59 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:08:59 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:08:59 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-10 11:09:01 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/app/Config/database.php, line 2]
+2014-09-10 11:09:01 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Vendor/cakephp/cakephp/
+Stack Trace:
+#0 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/emilrune...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#2 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/emilrune...', 2, Array)
+#3 /Users/emilrunemoller/Documents/Github/cakesigarhats/Vendor/cakephp/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

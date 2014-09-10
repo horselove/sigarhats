@@ -1,0 +1,21 @@
+{
+  "name": "Epocu",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ankr/epocu",
+  "authors": [
+    "Emil Møller <emilrmoeller@gmail.com>",
+    "Adam Zaken <adamzakenweb@gmail.dk>"
+  ],
+  "description": "Cap store for silas' sigarhats",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "foundation": "~5.2.3",
+    "slick-carousel": "~1.3.6"
+  }
+}
