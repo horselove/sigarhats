@@ -1,9 +1,9 @@
 <?php
 // Load Composer autoload.
 // change $root to ROOT if needed
-$root = '../../../../..';
+$root = '../../../../../';
 
-require($root .'/Vendor/autoload.php');
+require($root .'Vendor/autoload.php');
 
 // Remove and re-prepend CakePHP's autoloader as
 // Composer thinks it is the most important.

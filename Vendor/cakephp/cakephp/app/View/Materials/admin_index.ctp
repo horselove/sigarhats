@@ -8,8 +8,8 @@
 	<th>Delete</th>
 </tr>
 <?php foreach($materials as $material): ?>
-	<?php  
-		$imageUrl = $this->Html->assetUrl('/app/webroot/files/material/thumb_img/'.$material['Material']['dir'].'/thumb_'.$material['Material']['img'], array(
+	<?php
+		$imageUrl = $this->Html->assetUrl($material['Material']['dir'].'/thumb_'.$material['Material']['img'], array(
         // note: only required if you need the
         // URL -including- http://example.com
         'fullBase'   => true,
@@ -18,8 +18,8 @@
  ?>
 <tr>
 	<td><?= $material['Material']['name']; ?></td>
-	<td><?= $this->Html->image( $imageUrl, ['alt' => $material['Material']['name'].' Material Sigarhats'] ) ?></td>
-	
+	<td><?= $this->Html->image( $material['Material']['dir'], ['alt' => $material['Material']['name'].' Material Sigarhats'] ) ?></td>
+
 	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $material['Material']['id']], ['class' => ''] );?></td>
 </tr>
 <?php endforeach; ?>
