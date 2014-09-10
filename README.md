@@ -1,2 +1,3 @@
-sigarhats
+Sigar Hats
 =========
+
