@@ -1,20 +1,21 @@
-<?php 
+<?php
 class Product_img extends AppModel {
-    public $actsAs = array(
-        'Upload.Upload' => array(
-            'product_img' => array(
-                'thumbnailSizes' => array(
-                    'thumb' => '600w',
-                ),
-            ),
-        ),
-    );
+	//images rules
+  public $actsAs = [
+	  'Upload.Upload' => [
+    	'img' => [
+        'thumbnailSizes' => [
+          'thumb' => '500w'
+        ]
+      ]
+	  ]
+  ];
 
-    public $belongsTo = array(
-        'Product' => array(
-            'className' => 'Product',
-            'foreignKey' => 'product_id',
-        )
-    );
+  public $belongsTo = [
+    'Product' => [
+      'className' => 'Product',
+      'foreignKey' => 'product_id',
+	  ]
+	];
 }
 ?>

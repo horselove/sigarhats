@@ -8,18 +8,22 @@
 
 App::uses('AppController', 'Controller');
 
-class ProductsController extends AppController 
+class ProductsController extends AppController
 {
 		//public $name 	= 'Products'; //pluralization of the Model
 		public $helpers = array('Html', 'form'); //include additional helpers using the global $helpers
 
 
 		//Shows all products
-	
+
 		public function beforeFilter() {
-			$this->Crud->on('beforePaginate', array($this, '_productCallback'));
 
 			parent::beforeFilter();
+
+			//$this->Crud->action('Size')->relatedModels(array('Size'));
+
+			$this->Crud->on('beforePaginate', array($this, '_productCallback'));
+
 		}
 
 		public function _productCallback(CakeEvent $event) {
@@ -28,6 +32,8 @@ class ProductsController extends AppController
 		}
 
 		public function index() {
+						parent::beforeFilter();
+
 			return $this->Crud->execute();
 		}
 
@@ -36,40 +42,42 @@ class ProductsController extends AppController
 
 			});
 
-
 			$this->set('title_for_layout', 'View Product');
-	        
+
 	        if (!$id) {
 	            throw new NotFoundException(__('Invalid product'));
 	        }
-	      
+
 	        return $this->Crud->execute();
 		}
 
 /**
-*	Admin 
+*	Admin
 *
-*/		
+*/
 	public function admin_index() {
-	
-
 		return $this->Crud->execute();
 
 	}
-	
+
 	public function admin_add(){
+
+		if ($this->request->is('post')) {
+
+		}
+
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/products/admin_index');
-		});		
+		});
 
 		return $this->Crud->execute();
 
 	}
-	
+
 	public function admin_edit($id = null){
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/products/admin_edit/'.$this->Product->id );
-		});		
+		});
 		return $this->Crud->execute();
 
 	}

@@ -3,11 +3,12 @@
 <?= $this->Html->link('Add or edit concept', [ 'action' => 'admin_index', 'controller' => 'concepts'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
-<?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?> 
+<?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?>
 
 <table>
 <tr>
 		<th><?= $this->Paginator->sort('Neck Lable'); ?></th>
+        <th><?= $this->Paginator->sort('Cap id'); ?></th>
 		<th><?= $this->Paginator->sort('Name'); ?></th>
 		<th><?= $this->Paginator->sort('Description'); ?></th>
 		<th><?= $this->Paginator->sort('Price'); ?></th>
@@ -27,11 +28,12 @@
 
 <tr>
 	<td>collection.random#id -</td>
+    <td><?= $product['collections']['name']; ?> / <?= $product['Product']['capid']; ?></td>
 	<td><?= $product['Product']['name']; ?></td>
 	<td><?= $product['Product']['description']; ?></td>
 	<td><?= $product['Product']['price']; ?> €</td>
+    <td><?= $product['concepts']['name']; ?></td>
 	<td><?= $product['collections']['name']; ?></td>
-	<td><?= $product['concepts']['name']; ?></td>
 	<td><?= $product['sizes']['name']; ?></td>
 	<td> YES</td>
 	<td>img</td>
@@ -39,11 +41,11 @@
 	<td>NOT YET</td>
 	<td><?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']],  	['class' => ''] );?> </td>
 	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']],  	['class' => ''] );?> </td>
-	
+
 
 	<?php if( $productid == $product['user_avatars']['product_id'] ): ?>
-		
-	
+
+
 
 	<?php endif; ?>
 </tr>

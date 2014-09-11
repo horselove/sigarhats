@@ -17,15 +17,13 @@
     <div class="row">
         <div class="large-3 columns" id="scroll">
             <div data-scroll-fix="fixed">
-                <select name="Size" id="size">
-                    <option value="-" selected="selected">CHOOSE SIZE</option>
-                </select>
-                <select name="concepts" id="concepts">
-                    <option value="-" selected="selected">CONCEPTS</option>
-                </select>
-                <select name="collection" id="collection">
-                    <option value="-" selected="selected">COLLECTIONS</option>
-                </select>
+             <?php echo $this->Form->create('Product', [ 'lable' =>  false]); ?>
+
+              <?=  $this->Form->input( 'size_id',  [ 'option' =>  $sizes, 'empty' => 'CHOOSE SIZE']); ?>
+              <?=  $this->Form->input( 'concept_id',  [ 'option' =>  $concepts, 'empty' => 'CHOOSE CONCEPT' ]); ?>
+              <?=  $this->Form->input( 'collection_id',  [ 'option' =>  $collections, 'empty' => 'CHOOSE COLLECTION' ] ); ?>
+              <?php echo $this->Form->end(__('SEARCH PRODUCT')); ?>
+
                 <p>
                     <span>54</span> Caps Matching
                 </p>
