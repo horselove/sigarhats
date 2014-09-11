@@ -17,9 +17,13 @@ class ProductsController extends AppController
 		//Shows all products
 
 		public function beforeFilter() {
-			$this->Crud->on('beforePaginate', array($this, '_productCallback'));
 
 			parent::beforeFilter();
+
+			//$this->Crud->action('Size')->relatedModels(array('Size'));
+
+			$this->Crud->on('beforePaginate', array($this, '_productCallback'));
+
 		}
 
 		public function _productCallback(CakeEvent $event) {
@@ -28,6 +32,8 @@ class ProductsController extends AppController
 		}
 
 		public function index() {
+						parent::beforeFilter();
+
 			return $this->Crud->execute();
 		}
 
@@ -35,7 +41,6 @@ class ProductsController extends AppController
 			$this->Crud->on('beforeFind', function (CakeEvent $event) {
 
 			});
-
 
 			$this->set('title_for_layout', 'View Product');
 
@@ -56,14 +61,10 @@ class ProductsController extends AppController
 	}
 
 	public function admin_add(){
-    if ($this->request->is('post')) {
-      try {
-          $this->Post->createWithAttachments($this->request->data);
-          $this->Session->setFlash(__('The message has been saved'));
-      } catch (Exception $e) {
-          $this->Session->setFlash($e->getMessage());
-      }
-    }
+
+		if ($this->request->is('post')) {
+
+		}
 
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/products/admin_index');
