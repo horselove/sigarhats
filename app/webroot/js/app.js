@@ -1,6 +1,10 @@
 $(function () {
   $(document).foundation();
 
+  $('#js-reactor-editor').redactor({
+    minHeight: 300, // pixels
+  });
+
   $(".lazy").lazyload({
       effect: 'fadeIn'
   });

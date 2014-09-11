@@ -3,7 +3,7 @@
 <?php echo $this->Form->create('Product', array('type' => 'file')); ?>
 
 	<?= $this->Form->input( 'name', ['name', 'placeholder' => 'Cap name'] ); ?>
-	<?= $this->Form->text( 'description',['description', 'placeholder' => 'Description'] ); ?>
+	<?= $this->Form->textarea( 'description',['description', 'placeholder' => 'Description', 'id' => 'js-reactor-editor'] ); ?>
 	<?= $this->Form->input( 'price', ['price', 'placeholder' => 'Price of the cap'] ); ?>
 
 	<?=  $this->Form->input( 'size_id',  [ 'option' =>  $sizes, 'empty' => 'Choose size' ]); ?>

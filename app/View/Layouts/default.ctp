@@ -52,6 +52,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <!-- Lé javascripts -->
     <?php
     echo $this->Html->script('vendor');
+    echo $this->Html->script('redactor.min');
     echo $this->Html->script('app');
     ?>
 </body>

@@ -1,0 +1,19 @@
+// Product-view.scss
+
+.product-view--content {
+  .product-view__title {
+    margin-bottom: 0;
+  }
+  .product-view__concept {
+    margin-bottom: 50px;
+  }
+  .product-view__status {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+  .product-view__description {
+    margin-bottom: 50px;
+    max-width: 350px;
+  }
+
+}
