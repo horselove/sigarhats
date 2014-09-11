@@ -73,11 +73,18 @@
 ;
 
 @import
+    "plugins/redactor"
+;
+
+
+@import
     "modules/top-bar",
     "modules/teaser",
     "modules/hero",
     "modules/sections",
     "modules/product-list",
     "modules/block-lists",
-    "modules/pagination"
+    "modules/pagination",
+    "modules/product-view"
 ;
+

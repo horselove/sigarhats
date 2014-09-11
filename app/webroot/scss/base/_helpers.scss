@@ -37,7 +37,12 @@
 
 // 3. Whitespace
 
-.ws-large {
-  padding-top: 60px;
-  padding-bottom: 60px;
+.ws-xlarge {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media #{$medium} {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
 }
