@@ -8,23 +8,27 @@
 
   <section class="hide-for-small top-bar-section--secondary">
     <ul>
-      <li>
-          <?= $this->Html->link('Hats & Caps', ['controller' => 'products']); ?>
+      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products']); ?></li>
+      <li><?= $this->Html->link('shortfilms', ['controller' => 'films']); ?></li>
+
+      <li class="top-bar__logo top-bar__logo--centered">
+        <?= $this->Html->image( 'logo-small.jpg' , [
+           'alt' => 'Sigar hats and caps logo' ,
+           'url' => [ 'controller' => 'pages', 'action' => 'display', 'home' ]] ); ?>
       </li>
-      <li><a href="#">Shortfilms</a></li>
-      <li class="top-bar__logo top-bar__logo--centered"><a href="/"><img src="<?php echo $this->webroot; ?>img/logo-small.jpg" alt=""></a></li>
-      <li><a href="#">Story</a></li>
-      <li><a href="#">Register your cap</a></li>
+
+      <li><?= $this->Html->link('story', ['controller' => 'story']); ?></li>
+      <li><?= $this->Html->link('Register your cap', ['controller' => 'register']); ?></li>
     </ul>
   </section>
 
   <section class="top-bar-section hide-for-medium-up">
       <!-- Left Nav Section -->
       <ul class="left">
-        <li><a href="#">hats & caps</a></li>
-          <li><a href="#">Shortfilms</a></li>
-          <li><a href="#">Story</a></li>
-          <li><a href="#">Register your cap</a></li>
+      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products']); ?></li>
+      <li><?= $this->Html->link('shortfilms', ['controller' => 'films']); ?></li>
+      <li><?= $this->Html->link('story', ['controller' => 'story']); ?></li>
+      <li><?= $this->Html->link('Register your cap', ['controller' => 'register']); ?></li>
       </ul>
     </section>
 </nav>

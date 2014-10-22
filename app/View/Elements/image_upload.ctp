@@ -1,0 +1,1 @@
+<iframe src="<?= Router::url(['controller' => 'images', 'action' => 'admin_add', '?' => compact('callback', 'type', 'foreign_id')], true); ?>" height="150" frameborder="0" style="margin: -3px 0 0 -3px;"></iframe>

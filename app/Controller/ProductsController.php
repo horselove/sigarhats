@@ -62,10 +62,6 @@ class ProductsController extends AppController
 
 	public function admin_add(){
 
-		if ($this->request->is('post')) {
-
-		}
-
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/products/admin_index');
 		});

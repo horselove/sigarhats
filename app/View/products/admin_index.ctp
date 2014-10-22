@@ -1,57 +1,67 @@
-<?= $this->Html->link('Add new Product', [ 'action' => 'admin_add' ], ['class' => ''] ); ?><br><br>
+<?= $this->Html->link('Add new model', [ 'action' => 'admin_add' ], ['class' => ''] ); ?><br><br>
+<?= $this->Html->link('Add new item', [ 'action' => 'admin_add', 'controller' => 'productitems'] ); ?><br><br>
 <?= $this->Html->link('Add or edit materials', [ 'action' => 'admin_index', 'controller' => 'materials' ], ['class' => ''] ); ?><br><br>
 <?= $this->Html->link('Add or edit concept', [ 'action' => 'admin_index', 'controller' => 'concepts'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
+<?= $this->Html->link('Add or edit films', [ 'action' => 'admin_index', 'controller' => 'films'], ['class' => '']); ?><br>
 <?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?>
 
 <table>
 <tr>
-		<th><?= $this->Paginator->sort('Neck Lable'); ?></th>
-        <th><?= $this->Paginator->sort('Cap id'); ?></th>
+    <th><?= $this->Paginator->sort('Version'); ?></th>
 		<th><?= $this->Paginator->sort('Name'); ?></th>
-		<th><?= $this->Paginator->sort('Description'); ?></th>
 		<th><?= $this->Paginator->sort('Price'); ?></th>
 		<th><?= $this->Paginator->sort('Concept'); ?></th>
 		<th><?= $this->Paginator->sort('Collection'); ?></th>
-		<th><?= $this->Paginator->sort('Size'); ?></th>
 		<th><?= $this->Paginator->sort('Featured'); ?></th>
-		<th><?= $this->Paginator->sort('Image thumb'); ?></th>
 		<th><?= $this->Paginator->sort('Active'); ?></th>
-		<th><?= $this->Paginator->sort('sold'); ?></th>
-		<th>Edit</th>
-		<th>Delete</th>
+		<th><?= $this->Paginator->sort('Available'); ?></th>
+		<th>ACTIONS</th>
 </tr>
 
 <?php foreach ($products as $product): ?>
-<?php $productid = $product['Product']['id']; ?>
+
+  <?php $productid = $product['Product']['id']; ?>
+  <?php $productitems = $product['productitems']; ?>
+
+<?php //getting information of items ?>
+
+
 
 <tr>
-	<td>collection.random#id -</td>
-    <td><?= $product['collections']['name']; ?> / <?= $product['Product']['capid']; ?></td>
+  <td><?= $product['Product']['version']; ?></td>
 	<td><?= $product['Product']['name']; ?></td>
-	<td><?= $product['Product']['description']; ?></td>
 	<td><?= $product['Product']['price']; ?> €</td>
-    <td><?= $product['concepts']['name']; ?></td>
+  <td><?= $product['concepts']['name']; ?></td>
 	<td><?= $product['collections']['name']; ?></td>
-	<td><?= $product['sizes']['name']; ?></td>
-	<td> YES</td>
-	<td>img</td>
+	<td>YES</td>
 	<td><?php if($product['Product']['active'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
-	<td>NOT YET</td>
-	<td><?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']],  	['class' => ''] );?> </td>
-	<td><?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']],  	['class' => ''] );?> </td>
+	<td>SDS</td>
+	<td><?= $this->Html->link('New item', [ 'action' => 'admin_add', $product['Product']['id'], 'controller' => 'productitems'] ); ?> - <?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']], ['class' => ''] );?> - <?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']], ['class' => ''] );?>
+</tr>
+  <th>Necklable:</th>
+  <th>Date</th>
+  <th>Size</th>
+  <th>Owner</th>
+  <th>Actions</th>
+<tr>
 
-
-	<?php if( $productid == $product['user_avatars']['product_id'] ): ?>
-
-
-
-	<?php endif; ?>
 </tr>
 
-<?php endforeach;?>
+<div>
+  <?php foreach ($productitems as $productitem): ?>
+    <?php if ($productitem['product_id'] == $productid): ?>
+    <tr>
+      <td><?= $productitem['necklable_id']; ?></td>
+      <td><?= $productitem['created']; ?></td>
+      <td><?= $productitem['size_id']; ?></td>
+      <td>yo</td>
+      <td><?= $this->Html->link( 'Delete',   ['action' => 'admin_delete/', $productitem['id'], 'controller' => 'productitems'],   ['class' => ''] );?></td>
+    </tr>
+    <?php endif; ?>
+  <?php endforeach;?>
+</div>
+
+<?php endforeach; ?>
 </table>
-<?php unset($product); ?>
-
-

@@ -25,16 +25,16 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 //set landing page
-	Router::connect('/', ['controller' => 'pages', 'action' => 'display', 'home']);
+	Router::connect('/', [ 'controller' => 'pages', 'action' => 'display', 'home' ] );
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/pages/*', [ 'controller' => 'pages', 'action' => 'display' ] );
 
 
 // when log in dashboard
-	Router::connect('/admin', array('controller' => 'users', 'action' => 'admin_dashboard', 'admin' => true));
+	Router::connect('/admin', [ 'controller' => 'users', 'action' => 'admin_dashboard', 'admin' => true ] );
 
 
 /**
