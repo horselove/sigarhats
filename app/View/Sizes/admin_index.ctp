@@ -1,6 +1,6 @@
 <?= $this->Html->link('Back to product list', [ 'action' => 'admin_index', 'controller' => 'products' ], ['class' => ''] ); ?>
 <br>
-<?= $this->Html->link('Add new size', [ 'action' => 'admin_add' ], ['class' => ''] ); ?>
+<?= $this->Html->link('Add new size', [ 'action' => 'admin_add' ], ['class' => 'sizes'] ); ?>
 <table>
 <tr>
 	<th>Name of size</th>

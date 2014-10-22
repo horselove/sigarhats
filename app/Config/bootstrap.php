@@ -1,9 +1,6 @@
 <?php
 // Load Composer autoload.
-// change $root to ROOT if needed
-$root = '../../';
-
-require($root .'/Vendor/autoload.php');
+require ROOT . '/Vendor/autoload.php';
 
 // Remove and re-prepend CakePHP's autoloader as
 // Composer thinks it is the most important.
@@ -12,7 +9,7 @@ spl_autoload_unregister(['App', 'load']);
 spl_autoload_register(['App', 'load'], true, true);
 
 // Add composer folder to plugins' path.
-App::build(['Plugin' => [$root . DS . 'Plugin' . DS]]);
+App::build(['Plugin' => [ROOT . DS . 'Plugin' . DS]]);
 
 // Load plugins
 CakePlugin::load('DebugKit');

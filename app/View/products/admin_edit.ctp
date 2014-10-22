@@ -5,10 +5,11 @@
 <?= $this->Form->create('Product', array('type' => 'file')); ?>
 
 	<?= $this->Form->input( 'name', ['name', 'placeholder' => 'Cap name'] ); ?>
+    <?= $this->Form->input( 'version', ['version', 'placeholder' => 'Cap id'] ); ?>
+
 	<?= $this->Form->textarea( 'description',['description', 'placeholder' => 'Description', 'id' => 'js-reactor-editor'] ); ?>
 	<?= $this->Form->input( 'price', ['price', 'placeholder' => 'Price of the cap'] ); ?>
 
-	<?=  $this->Form->input( 'size_id',  [ 'option' =>  $sizes, 'empty' => 'Choose size' ]); ?>
 	<?=  $this->Form->input( 'concept_id',  [ 'option' =>  $concepts, 'empty' => 'Choose concept' ]); ?>
 	<?=  $this->Form->input( 'collection_id',  [ 'option' =>  $collections, 'empty' => 'Choose collection' ] ); ?>
 

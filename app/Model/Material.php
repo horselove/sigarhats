@@ -2,15 +2,15 @@
 class Material extends AppModel {
 
 	// image
-  public $actsAs = [
-      'Upload.Upload' => [
-          'img' => [
-              'thumbnailSizes' => [
-                  'thumb' => '500w'
-              ]
-          ]
+	public $actsAs = [
+    'Upload.Upload' => [
+      'img' => [
+        'thumbnailSizes' => [
+            'thumb' => '500w'
+        ]
       ]
-  ];
+    ]
+	];
 
 }
 
