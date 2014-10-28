@@ -1,5 +1,5 @@
 <?= $this->Html->link('Add new films', [ 'action' => 'admin_add', 'controller' => 'films'], ['class' => '']); ?><br>
-<?= $this->Html->link('Add new film type', [ 'action' => 'admin_index', 'controller' => 'filmtype'], ['class' => '']); ?><br>
+<?= $this->Html->link('Add new film type', [ 'action' => 'admin_index', 'controller' => 'filmtypes'], ['class' => '']); ?><br>
 
 <table>
 <tr>

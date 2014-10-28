@@ -35,27 +35,29 @@ App::uses('Product', 'Model');
  */
 class AppController extends Controller {
 
- public $components = [
-    'RequestHandler',
-    'Paginator',
-    'Session',
-    'DebugKit.Toolbar',
+	public $components = [
+	  'RequestHandler',
+	  'Session',
+	  'DebugKit.Toolbar',
 
-    'Auth' => [
-      'loginAction' => [
-        'controller' => 'users',
-        'action' => 'login'
-      ]
-    ],
-    'Crud.Crud' => [
-      'actions' => ['view', 'admin_edit', 'admin_index', 'admin_delete',
-      	'index' => ['relatedModels' => true],
-      	'home' => ['relatedModels' => true],
-      	'admin_add' => ['relatedModels' => true]
-
-      ]
-    ]
-  ];
+	  'Auth' => [
+	    'loginAction' => [
+	      'controller' => 'users',
+	      'action' => 'login'
+	    ]
+	  ],
+	  'Crud.Crud' => [
+	    'actions' => ['view', 'admin_edit', 'admin_index', 'admin_delete',
+	    	'index' => ['relatedModels' => true],
+	    	'home' => ['relatedModels' => true],
+	    	'admin_add' => ['relatedModels' => true]
+	    ],
+	  	'listeners' => [
+	  		'Api',
+	  		'ApiPagination'
+	  	]
+	  ]
+	];
 
 
     // Allow nonusers to enter the site
