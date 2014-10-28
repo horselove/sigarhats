@@ -14,11 +14,12 @@ class Film extends AppModel {
     ]
 	];
 
-
   public $belongsTo = [
     'filmtype' => [
       'className' => 'filmtype',
-      'foreignKey' => 'filmType',
-	  ]
+      'foreignKey' => 'filmType'
+ 	  ]
 	];
+
+
 }

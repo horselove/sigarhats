@@ -1,11 +1,36 @@
 <?php
+
 class FilmsController extends AppController {
 
-	public function admin_index() {
+  public function beforeFilter() {
+
+		parent::beforeFilter();
+
+		$this->Crud->on('beforePaginate', [$this, '_filmCallback']);
+
+    $this->Crud->addListener('Api');
+    $this->Crud->addListener('ApiPagination');
+  }
+
+  public function _filmCallback(CakeEvent $event) {
+
+
+		$event->subject->paginator->settings['limit'] = 50;
+		$event->subject->paginator->settings['order'] = '';
+		debug($event->subject->paginator->settings);
+	}
+
+	public function index () {
+
+		return $this->Crud->execute();
+
+	}
+
+	public function admin_index () {
 		return $this->Crud->execute();
 	}
 
-	public function admin_add(){
+	public function admin_add () {
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/films/admin_index');
 		});
@@ -14,7 +39,7 @@ class FilmsController extends AppController {
 
 	}
 
-	public function admin_edit($id = null){
+	public function admin_edit ($id = null) {
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/films/admin_edit/'.$this->Film->id );
 		});
