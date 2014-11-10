@@ -22,6 +22,7 @@
 App::uses('Controller', 'Controller');
 App::uses('CrudControllerTrait', 'Crud.Lib');
 App::uses('Product', 'Model');
+App::uses('CakeEmail', 'Network/Email');
 
 
 /**
@@ -39,6 +40,7 @@ class AppController extends Controller {
 	  'RequestHandler',
 	  'Session',
 	  'DebugKit.Toolbar',
+	  'Email',
 
 	  'Auth' => [
 	    'loginAction' => [
