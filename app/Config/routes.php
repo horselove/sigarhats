@@ -33,9 +33,11 @@
 	Router::connect('/pages/*', [ 'controller' => 'pages', 'action' => 'display' ] );
 
 
-// when log in dashboard
+// when login dashboard to products
 	Router::connect('/admin', [ 'controller' => 'users', 'action' => 'admin_dashboard', 'admin' => true ] );
 
+// rename contacts to contact
+	Router::connect('/contact', ['controller' => 'contacts', 'action' => 'index'] );
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
