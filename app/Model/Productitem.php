@@ -10,8 +10,11 @@ class Productitem extends AppModel {
 	  'product' => [
 	  	'className' => 'products',
 	  	'foreignKey' => 'product_id'
+	  ],
+	  'reseller' => [
+	  	'className' => 'reseller',
+	  	'foreignKey' => 'reseller_id'
 	  ]
-
 	];
 
 

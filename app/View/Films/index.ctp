@@ -11,9 +11,9 @@
 
 
   <div>
-    <?php foreach ( $filmtypes as $filmtype ) :  ?>
+    <?php foreach($films as $film): ?><br>
 
-    <?= $filmtype?><br>
+      <?= var_dump($film); ?><br>
 
     <?php endforeach; ?>
   </div>

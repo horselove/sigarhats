@@ -25,6 +25,14 @@ class ProductitemsController extends AppController {
 		return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
 	}
 
+	public function admin_edit ($id = null) {
+		$this->Crud->on('afterSave', function (CakeEvent $event) {
+			return $this->redirect('/productitems/admin_edit/'.$this->Productitem->id );
+		});
+		return $this->Crud->execute();
+
+	}
+
 	function necklable (){
 		$time = $this->Time->convert(time(), 'Asia/Jakarta');
     $string = strval($time);

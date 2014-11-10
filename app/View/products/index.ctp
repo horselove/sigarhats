@@ -36,7 +36,7 @@
                         </div>
                         <div class="pagination__controls">
                             <a href="#" class="button button--round button--ghost pagination__nav-left">
-                                <span><</span>
+                                <span></span>
                             </a>
                             <a href="#" class="button button--round button--ghost pagination__nav-right">
                                 <span>></span>
@@ -49,7 +49,7 @@
         </div>
         <div class="large-9 columns">
             <ul class="block-list block-list--catalogue product-list">
-                <?php foreach($products as $product) { ?>
+                <?php foreach($products as $product) :?>
                     <li class="product-list__item product-list__item--hoverable">
                         <?= $this->Html->link('
                             <img class="product-list__item__image lazy" data-original="/img/small-cap.png" alt="">
@@ -64,7 +64,7 @@
                         ',['action' => 'view/', $product['Product']['id']],['escape' => false]); ?>
                         </a>
                     </li>
-                <?php } ?>
+                <?php endforeach ;?>
             </ul>
             <div class="show-for-medium-down">
                 {{> pagination}}
@@ -72,5 +72,3 @@
         </div>
     </div>
 </section>
-
-<?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?>

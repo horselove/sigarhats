@@ -5,6 +5,8 @@
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
 <?= $this->Html->link('Add or edit films', [ 'action' => 'admin_index', 'controller' => 'films'], ['class' => '']); ?><br>
+<?= $this->Html->link('Add or edit resellers', [ 'action' => 'admin_index', 'controller' => 'resellers'], ['class' => '']); ?><br>
+
 <?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?>
 
 <table>
@@ -38,7 +40,7 @@
 	<td>YES</td>
 	<td><?php if($product['Product']['active'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
 	<td>SDS</td>
-	<td><?= $this->Html->link('New item', [ 'action' => 'admin_add', $product['Product']['id'], 'controller' => 'productitems'] ); ?> - <?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']], ['class' => ''] );?> - <?= $this->Html->link( 'Delete',	['action' => 'admin_delete/', $product['Product']['id']], ['class' => ''] );?>
+	<td><?= $this->Html->link('New item', [ 'action' => 'admin_add', $product['Product']['id'], 'controller' => 'productitems'] ); ?> - <?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']], ['class' => ''] );?> - <?= $this->Html->link( 'Delete',	[ 'action' => 'admin_delete/', $product['Product']['id'] ], [ 'escape'=>false, 'confirm'=>'Are you sure, you want to delete this product?' ] );?>
 </tr>
   <th>Necklable:</th>
   <th>Date</th>
@@ -57,7 +59,10 @@
       <td><?= $productitem['created']; ?></td>
       <td><?= $productitem['size_id']; ?></td>
       <td>yo</td>
-      <td><?= $this->Html->link( 'Delete',   ['action' => 'admin_delete/', $productitem['id'], 'controller' => 'productitems'],   ['class' => ''] );?></td>
+      <td>
+        <?= $this->Html->link( 'Edit',   ['action' => 'admin_edit/', $productitem['id'], 'controller' => 'productitems'] );?> /
+        <?= $this->Html->link( 'Delete',   ['action' => 'admin_delete/', $productitem['id'], 'controller' => 'productitems'], [ 'escape'=>false, 'confirm'=>'Are you sure, you want to delete this item ?' ] );?>
+      </td>
     </tr>
     <?php endif; ?>
   <?php endforeach;?>
