@@ -12,10 +12,7 @@ spl_autoload_register(['App', 'load'], true, true);
 App::build(['Plugin' => [ROOT . DS . 'Plugin' . DS]]);
 
 // Load plugins
-CakePlugin::load('DebugKit');
-CakePlugin::load('Crud');
-CakePlugin::load('Upload');
-
+CakePlugin::loadAll();
 
 /**
  * This file is loaded automatically by the app/webroot/index.php file after core.php

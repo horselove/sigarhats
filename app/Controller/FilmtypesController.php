@@ -9,18 +9,23 @@ class FilmtypesController extends AppController {
 	}
 
 // here the paginator is set
-	public function _filmTypeCallback(CakeEvent $event) {
+	public function _filmTypeCallback (CakeEvent $event) {
 		$event->subject->paginator->settings['limit'] = 50;
-		$event->subject->paginator->settings['order'] = 'order';
+		$event->subject->paginator->settings['order'] = 'Filmtype.order';
 
 		debug($event->subject->paginator->settings);
 	}
 
-
-	public function admin_index() {
+	public function view($id = null) {
+		$this->Crud->on('beforeFind', function (CakeEvent $e) {
+			$e->subject->query['contain']['Film'] = [];
+		});
 
 		return $this->Crud->execute();
+	}
 
+	public function admin_index() {
+		return $this->Crud->execute();
 	}
 
 	public function admin_add(){

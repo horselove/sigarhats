@@ -4,7 +4,7 @@
 
   <?= $this->Form->input( 'name', ['name', 'placeholder' => 'Cap name'] ); ?>
   <?= $this->Form->input( 'version', ['version', 'placeholder' => 'Cap id'] ); ?>
-	<?= $this->Form->textarea( 'description',['description', 'placeholder' => 'Description', 'id' => 'js-reactor-editor'] ); ?>
+  <?= $this->Form->textarea( 'description',['description', 'placeholder' => 'Description', 'id' => 'js-reactor-editor'] ); ?>
 
   <?= $this->Form->input( 'price', ['price', 'placeholder' => 'Price of the cap'] ); ?>
 
