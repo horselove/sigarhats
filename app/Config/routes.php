@@ -38,6 +38,8 @@
 
 // rename contacts to contact
 	Router::connect('/contact', ['controller' => 'contacts', 'action' => 'index'] );
+// rename storys to story
+	Router::connect('/story', ['controller' => 'storys', 'action' => 'index'] );
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

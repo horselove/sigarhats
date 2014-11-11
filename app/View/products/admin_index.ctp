@@ -1,11 +1,12 @@
 <?= $this->Html->link('Add new model', [ 'action' => 'admin_add' ], ['class' => ''] ); ?><br><br>
 <?= $this->Html->link('Add new item', [ 'action' => 'admin_add', 'controller' => 'productitems'] ); ?><br><br>
-<?= $this->Html->link('Add or edit materials', [ 'action' => 'admin_index', 'controller' => 'materials' ], ['class' => ''] ); ?><br><br>
+<?= $this->Html->link('Add or edit materials', [ 'action' => 'admin_index', 'controller' => 'materials' ], ['class' => ''] ); ?><br>
 <?= $this->Html->link('Add or edit concept', [ 'action' => 'admin_index', 'controller' => 'concepts'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit collection', [ 'action' => 'admin_index', 'controller' => 'collections'], ['class' => '']); ?><br>
-<?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br><br>
+<?= $this->Html->link('Add or edit sizes', [ 'action' => 'admin_index', 'controller' => 'sizes'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit films', [ 'action' => 'admin_index', 'controller' => 'films'], ['class' => '']); ?><br>
 <?= $this->Html->link('Add or edit resellers', [ 'action' => 'admin_index', 'controller' => 'resellers'], ['class' => '']); ?><br>
+<?= $this->Html->link('Story', [ 'action' => 'admin_index', 'controller' => 'storys'], ['class' => '']); ?><br>
 
 <?=  $this->Html->link('Log out', [ 'controller' => 'users', 'action' => 'logout' ]); ?>
 
