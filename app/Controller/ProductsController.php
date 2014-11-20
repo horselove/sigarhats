@@ -10,46 +10,60 @@ App::uses('AppController', 'Controller');
 
 class ProductsController extends AppController
 {
-		//public $name 	= 'Products'; //pluralization of the Model
-		public $helpers = array('Html', 'form'); //include additional helpers using the global $helpers
+	public $helpers = array('Html', 'form'); //include additional helpers using the global $helpers
 
 
-		//Shows all products
+	public function beforeFilter() {
 
-		public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Crud->on('beforePaginate', array($this, '_productCallback'));
 
-			parent::beforeFilter();
+	}
 
-			//$this->Crud->action('Size')->relatedModels(array('Size'));
+	public function _productCallback(CakeEvent $event) {
+		$event->subject->paginator->settings;
+		//debug($event->subject->paginator->settings);
+	}
 
-			$this->Crud->on('beforePaginate', array($this, '_productCallback'));
+	public function index() {
+		parent::beforeFilter();
 
-		}
+	  $products = $this->paginate();
 
-		public function _productCallback(CakeEvent $event) {
-			$event->subject->paginator->settings;
-			//debug($event->subject->paginator->settings);
-		}
+	  if ($this->request->is('requested')) {
+	      return $products;
+	  } else {
+	      $this->set('posts', $products);
+	  }
 
-		public function index() {
-						parent::beforeFilter();
+		return $this->Crud->execute();
 
-			return $this->Crud->execute();
-		}
+	}
 
-		public function view ($id = null) {
-			$this->Crud->on('beforeFind', function (CakeEvent $event) {
+	public function view ($id = null) {
 
-			});
+		$this->Crud->on('beforeFind', function (CakeEvent $event) {
+		});
 
-			$this->set('title_for_layout', 'View Product');
+		$this->set('title_for_layout', 'View Product');
+	    if (!$id) {
+	        throw new NotFoundException(__('Invalid product'));
+	    }
+	    return $this->Crud->execute();
+	}
 
-	        if (!$id) {
-	            throw new NotFoundException(__('Invalid product'));
-	        }
+//testing page
+	public function landingpage() {
+	  $products = $this->paginate();
 
-	        return $this->Crud->execute();
-		}
+	  if ($this->request->is('requested')) {
+	      return $products;
+	  } else {
+	      $this->set('posts', $products);
+	  }
+
+	}
+
 
 /**
 *	Admin

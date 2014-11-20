@@ -10,10 +10,7 @@ class FilmtypesController extends AppController {
 
 // here the paginator is set
 	public function _filmTypeCallback (CakeEvent $event) {
-		$event->subject->paginator->settings['limit'] = 50;
-		$event->subject->paginator->settings['order'] = 'Filmtype.order';
 
-		debug($event->subject->paginator->settings);
 	}
 
 	public function view($id = null) {

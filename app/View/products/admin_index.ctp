@@ -38,15 +38,16 @@
 	<td><?= $product['Product']['price']; ?> €</td>
   <td><?= $product['concepts']['name']; ?></td>
 	<td><?= $product['collections']['name']; ?></td>
-	<td>YES</td>
+    <td><?php if($product['Product']['featured'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
 	<td><?php if($product['Product']['active'] == '1') { echo 'yes'; } else { echo 'no'; } ?></td>
-	<td>SDS</td>
+	<td>todo</td>
 	<td><?= $this->Html->link('New item', [ 'action' => 'admin_add', $product['Product']['id'], 'controller' => 'productitems'] ); ?> - <?= $this->Html->link( 'Edit',	['action' => 'admin_edit/', $product['Product']['id']], ['class' => ''] );?> - <?= $this->Html->link( 'Delete',	[ 'action' => 'admin_delete/', $product['Product']['id'] ], [ 'escape'=>false, 'confirm'=>'Are you sure, you want to delete this product?' ] );?>
 </tr>
   <th>Necklable:</th>
-  <th>Date</th>
+  <th>Store</th>
   <th>Size</th>
   <th>Owner</th>
+  <th>Number</th>
   <th>Actions</th>
 <tr>
 
@@ -57,9 +58,10 @@
     <?php if ($productitem['product_id'] == $productid): ?>
     <tr>
       <td><?= $productitem['necklable_id']; ?></td>
-      <td><?= $productitem['created']; ?></td>
-      <td><?= $productitem['size_id']; ?></td>
-      <td>yo</td>
+      <td>basement (todo)</td>
+      <td><?= $productitem['size_id']; ?>todo</td>
+      <td>todo</td>
+      <td><?= $productitem['number']; ?></td>
       <td>
         <?= $this->Html->link( 'Edit',   ['action' => 'admin_edit/', $productitem['id'], 'controller' => 'productitems'] );?> /
         <?= $this->Html->link( 'Delete',   ['action' => 'admin_delete/', $productitem['id'], 'controller' => 'productitems'], [ 'escape'=>false, 'confirm'=>'Are you sure, you want to delete this item ?' ] );?>
