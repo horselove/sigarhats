@@ -15,4 +15,5 @@
   <?= $this->Form->input( 'featured',  [ 'options' =>  ['0' => 'Not featured', '1' => 'featured product' ] ] ); ?>
 
 <?= $this->element('image_upload'); ?>
+
 <?php echo $this->Form->end(__('Insert product')); ?>

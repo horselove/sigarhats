@@ -74,7 +74,7 @@ class AppController extends Controller {
         ),
       ), 'Form'
     );
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow('index', 'view', 'home');
     }
 
     public function index(){

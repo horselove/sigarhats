@@ -23,6 +23,10 @@ class Product extends AppModel
 		'collections' => [
 			'className' => 'collections',
 			'foreignKey' => 'concept_id'
+		],
+		'images' => [
+			'classname' => 'images',
+			'foreignKey' => 'id'
 		]
 	];
 	public $hasMany = [

@@ -15,7 +15,6 @@ class FilmsController extends AppController {
   public function _filmCallback(CakeEvent $event) {
 
 		$event->subject->paginator->settings['limit'] = 50;
-		$event->subject->paginator->settings['order'] = '';
 		debug($event->subject->paginator->settings);
 	}
 

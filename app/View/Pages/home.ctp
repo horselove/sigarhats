@@ -33,7 +33,7 @@
     </div>
     <div class="row">
         <div class="column">
-            {{> product_list}}
+            <?= $this->element('products'); ?>
         </div>
     </div>
 </section>
@@ -50,7 +50,7 @@
     </div>
     <div class="row">
         <div class="column">
-            {{> product_list--material}}
+                <?= $this->element('materials'); ?>
         </div>
     </div>
 </section>
@@ -93,7 +93,9 @@
                     Tought by an old dude, like a young padawan i was. Much learning i had to do in many years before a jedi in cap making i could call myself.
                 </p>
                 <br>
-                <a href="#" class="teaser__link">Read full story</a>
+                <?= $this->Html->link('Read full story',
+                    ['controller' => 'story', 'action' => 'index'],
+                    [ 'class' => 'teaser__link']); ?>
             </div>
         </div>
     </div>

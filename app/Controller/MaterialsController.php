@@ -1,6 +1,15 @@
 <?php
 class MaterialsController extends AppController {
 
+ public function index() {
+      $materials = $this->paginate();
+      if ($this->request->is('requested')) {
+          return $materials;
+      } else {
+          $this->set('posts', $materials);
+      }
+  }
+
 	public function admin_index() {
 
 		return $this->Crud->execute();

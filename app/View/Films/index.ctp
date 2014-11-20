@@ -11,11 +11,16 @@
 
 
   <div>
-    <?php foreach($films as $film): ?><br>
+    <?php foreach($filmtypes as $filmtype): ?><br>
+    <?= $filmtype; ?>
 
-      <?= var_dump($film); ?><br>
+      <?php foreach($films as $film): ?><br>
+        <?= var_dump($film); ?>
 
-    <?php endforeach; ?>
+      <?php endforeach; ?>
+      <br><br>
+   <?php endforeach; ?>
+
   </div>
 
 

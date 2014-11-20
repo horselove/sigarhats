@@ -8,8 +8,8 @@
 
   <section class="hide-for-small top-bar-section--secondary">
     <ul>
-      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products']); ?></li>
-      <li><?= $this->Html->link('shortfilms', ['controller' => 'films']); ?></li>
+      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products', 'action' => 'index']); ?></li>
+      <li><?= $this->Html->link('shortfilms', ['controller' => 'shortfilms', 'action' => 'index']); ?></li>
 
       <li class="top-bar__logo top-bar__logo--centered">
         <?= $this->Html->image( 'logo-small.jpg' , [
@@ -17,18 +17,18 @@
            'url' => [ 'controller' => 'pages', 'action' => 'display', 'home' ]] ); ?>
       </li>
 
-      <li><?= $this->Html->link('story', ['controller' => 'story']); ?></li>
-      <li><?= $this->Html->link('Register your cap', ['controller' => 'register']); ?></li>
+      <li><?= $this->Html->link('story', ['controller' => 'story', 'action' => 'index']); ?></li>
+      <li><?= $this->Html->link('Register your cap', ['controller' => 'register', 'action' => 'index']); ?></li>
     </ul>
   </section>
 
   <section class="top-bar-section hide-for-medium-up">
       <!-- Left Nav Section -->
       <ul class="left">
-      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products']); ?></li>
-      <li><?= $this->Html->link('shortfilms', ['controller' => 'films']); ?></li>
-      <li><?= $this->Html->link('story', ['controller' => 'story']); ?></li>
-      <li><?= $this->Html->link('Register your cap', ['controller' => 'register']); ?></li>
+      <li><?= $this->Html->link('Hats & Caps', ['controller' => 'products', 'action' => 'index']); ?></li>
+      <li><?= $this->Html->link('shortfilms', ['controller' => 'shortfilms', 'action' => 'index']); ?></li>
+      <li><?= $this->Html->link('story', ['controller' => 'story', 'action' => 'index']); ?></li>
+      <li><?= $this->Html->link('Register your cap', ['controller' => 'register', 'action' => 'index']); ?></li>
       </ul>
     </section>
 </nav>

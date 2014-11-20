@@ -2,6 +2,12 @@
 
 class ProductitemsController extends AppController {
 
+	public function add (){
+		if ($this->request->is('post')) {
+			$this->request->data('Organization.owner_id', $this->Auth->user('id'));
+		}
+	}
+
 	public function admin_add ($id = null) {
 
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
@@ -42,6 +48,6 @@ class ProductitemsController extends AppController {
       $string[$i];
 	  }
 
-	  $this->Tmp->saveAll($string);
+	  $necklable = $this->Tmp->saveAll($string);
 	}
 }
