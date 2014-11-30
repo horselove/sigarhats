@@ -16,6 +16,6 @@
 	<?= $this->Form->input( 'active', [ 'options'  => [ '0' => 'Deactivate product', '1' => 'Activate product' ] ] ); ?>
 	<?= $this->Form->input( 'featured',  [ 'options' =>  ['0' => 'Not featured', '1' => 'featured product' ] ] ); ?>
 	<?= $this->Form->file( 'Document.submittedfile' ); ?>
-	<?= $this->form->submit( 'Edit product' )?>
+	<?= $this->form->submit( 'Save' )?>
 
 <?= $this->Form->end(); ?>

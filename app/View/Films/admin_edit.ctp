@@ -7,6 +7,6 @@
     <?php echo $this->Form->input('img', [ 'type' => 'file' ]); ?>
     <?= $this->Form->input( 'filmType', [ 'options' => $filmtypes, 'empty' => 'Choose film type' ] ); ?>
     <?= $this->Form->input( 'landingpage', [ 'options' =>  ['0' => 'Not show on landingpage', '1' => 'show on landingpage' ] ]  ); ?>
-    <?= $this->Form->submit( 'Edit film' )?>
+    <?= $this->Form->submit( 'Save' )?>
 
 <?php echo $this->Form->end(); ?>

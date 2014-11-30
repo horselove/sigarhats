@@ -1,21 +1,16 @@
 <?php
 
-class ProductitemsController extends AppController {
 
-	public function add (){
-		if ($this->request->is('post')) {
-			$this->request->data('Organization.owner_id', $this->Auth->user('id'));
-		}
-	}
+class ProductitemsController extends AppController {
 
 	public function admin_add ($id = null) {
 
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
+
 			return $this->redirect($this->request->here(false));
 		});
 
 		return $this->Crud->execute();
-
 	}
 
 	public function admin_delete ($id = null) {
@@ -39,15 +34,30 @@ class ProductitemsController extends AppController {
 
 	}
 
-	function necklable (){
-		$time = $this->Time->convert(time(), 'Asia/Jakarta');
-    $string = strval($time);
-    $len = strlen($string);
+//selling and unselling items
+	public function sold ($id = null) {
+		$this->Productitem->id = $id;
 
-    for ($i =($len-1); $i>=6; $i--) {
-      $string[$i];
-	  }
-
-	  $necklable = $this->Tmp->saveAll($string);
+		if (!$this->Productitem->exists()) {
+			throw new NotFoundException('Invalid item');
+		}
+		else{
+			$this->Productitem->saveField('sold', 1);
+			$this->Session->setFlash('Item sold.');
+			return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
+		}
 	}
+	public function notsold ($id = null) {
+		$this->Productitem->id = $id;
+
+		if (!$this->Productitem->exists()) {
+			throw new NotFoundException('Invalid item');
+		}
+		else{
+			$this->Productitem->saveField('sold', 0);
+			$this->Session->setFlash('Item unsold.');
+			return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
+		}
+	}
+
 }

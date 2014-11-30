@@ -5,6 +5,7 @@
     <?= $this->Form->input( 'title', ['name', 'placeholder' => 'Film title'] ); ?>
     Embed code e.g. //player.vimeo.com/video/108940057
     <?= $this->Form->input( 'embed_url', ['name', 'placeholder' => 'Film embed'] ); ?>
+    Upload only 500x500px
     <?php echo $this->Form->input('img', [ 'type' => 'file' ]); ?>
     <?= $this->Form->input( 'filmType', [ 'options' => $filmtypes, 'empty' => 'Choose film type' ] ); ?>
     <?= $this->Form->input( 'landingpage', [ 'options' =>  ['0' => 'Not show on landingpage', '1' => 'show on landingpage' ] ]  ); ?>

@@ -8,8 +8,7 @@
   <th>Active on landing page</th>
   <th>Film</th>
   <th>Image overlay</th>
-  <th>Edit</th>
-  <th>Delete</th>
+  <th>Action</th>
 </tr>
 <?php foreach($films as $film): ?>
 <?php
@@ -28,10 +27,10 @@
     $active = 1;
     $activeOnLandingpage = $film['Film']['landingpage'];
     if ( $active == $activeOnLandingpage ) {
-      echo 'Active on landingpage';
+      echo 'Active';
     }
     else {
-      echo 'Not active on landingpage';
+      echo 'No';
     }
   ?>
   </td>
@@ -41,8 +40,7 @@
   src="<?= $film['Film']['embed_url']; ?>">
   </iframe></td>
   <td><?= $this->Html->image( $imageUrl ); ?></td>
-  <td><?= $this->Html->link( 'Edit',  ['action' => 'admin_edit/', $film['Film']['id']], ['class' => ''] );?></td>
-  <td><?= $this->Html->link( 'Delete',    ['action' => 'admin_delete/', $film['Film']['id']], ['class' => ''] );?></td>
+  <td><?= $this->Html->link( 'Edit',  ['action' => 'admin_edit/', $film['Film']['id']], ['class' => ''] );?> / <?= $this->Html->link( 'Delete',    ['action' => 'admin_delete/', $film['Film']['id']], ['class' => ''] );?></td>
 </tr>
 <?php endforeach; ?>
 

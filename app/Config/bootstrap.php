@@ -11,7 +11,7 @@ spl_autoload_register(['App', 'load'], true, true);
 // Add composer folder to plugins' path.
 App::build(['Plugin' => [ROOT . DS . 'Plugin' . DS]]);
 
-// Load plugins
+// Load all plugins
 CakePlugin::loadAll();
 
 /**

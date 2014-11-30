@@ -3,7 +3,7 @@
 <?php echo $this->Form->create('Concept'); ?>
 
 	<?= $this->Form->input( 'name', ['name', 'placeholder' => 'Concept name'] ); ?>
-	<?= $this->Form->text( 'description',['description', 'placeholder' => 'Description'] ); ?>
-	<?= $this->form->submit( 'Insert product' )?>
+    <?= $this->Form->textarea( 'description',['description', 'placeholder' => 'Description', 'id' => 'js-reactor-editor'] ); ?>
+    <?= $this->form->submit( 'save' )?>
 
 <?php echo $this->Form->end(); ?>

@@ -72,12 +72,10 @@ class AppController extends Controller {
           'username' => 'username',
           'password' => 'password'
         ),
-      ), 'Form'
+      ), 'Form',
     );
-        $this->Auth->allow('index', 'view', 'home');
-    }
-
-    public function index(){
+   	 $this->Auth->allow('index', 'view');
 
     }
+
 }
