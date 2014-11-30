@@ -13,4 +13,4 @@
 
     <?=  $this->Form->input( 'number', [ 'placeholder' => 'Number'] ); ?>
 
-<?php echo $this->Form->end(__('Edit product')); ?>
+<?php echo $this->Form->end(__('Save')); ?>

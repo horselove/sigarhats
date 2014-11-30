@@ -4,10 +4,9 @@
 
   <?= $this->Form->input( 'langues', ['langues', 'placeholder' => 'langues'] ); ?>
   <?= $this->Form->input( 'headline', ['headline', 'placeholder' => 'headline'] ); ?>
-by typing IMAGE the a image will apear
   <?= $this->Form->textarea( 'story',['story', 'placeholder' => 'story', 'id' => 'js-reactor-editor'] ); ?>
 
-  <?= $this->Form->submit( 'edit story' )?>
+  <?= $this->Form->submit( 'Save' )?>
 
 <?php echo $this->Form->end(); ?>
 

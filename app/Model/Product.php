@@ -37,13 +37,14 @@ class Product extends AppModel
 	];
 
 	public $hasAndBelongsToMany = [
-		'sizes' => [
+		'resellers' => [
+			'className' => 'resellers',
+			'joinTable' => 'productitems'
+		],
+		'size' => [
 			'className' => 'sizes',
-			'joinTable' => 'productitems',
-			'foreignKey' => 'id',
-			'associationForeignKey' => 'size_id',
-			'method' => 'inner'
-		]
+			'joinTable' => 'productitems'
+		],
 	];
 
 

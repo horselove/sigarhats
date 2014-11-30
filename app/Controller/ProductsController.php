@@ -105,4 +105,30 @@ class ProductsController extends AppController
 		return $this->redirect(array('action' => 'admin_index'));
 	}
 
+	public function featured ($id = null) {
+		$this->Product->id = $id;
+
+		if (!$this->Product->exists()) {
+			throw new NotFoundException('Invalid model');
+		}
+		else{
+			$this->Product->saveField('featured', 1);
+			$this->Session->setFlash('model is now featured.');
+			return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
+		}
+	}
+//unselling item
+	public function unfeatured ($id = null) {
+		$this->Product->id = $id;
+
+		if (!$this->Product->exists()) {
+			throw new NotFoundException('Invalid item');
+		}
+		else{
+			$this->Product->saveField('featured', 0);
+			$this->Session->setFlash('model is now unfeatured.');
+			return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
+		}
+	}
+
 }

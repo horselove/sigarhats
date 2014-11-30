@@ -1,6 +1,9 @@
 <?php
 
+
 class Productitem extends AppModel {
+  public $name = 'Productitem';
+	public $primaryKey = 'id';
 
 	public $belongsTo = [
 	'sizes' => [
@@ -14,6 +17,16 @@ class Productitem extends AppModel {
 	  'reseller' => [
 	  	'className' => 'reseller',
 	  	'foreignKey' => 'reseller_id'
+	  ],
+	  'user_avatars' => [
+	  	'className' => 'user_avatars',
+	  	'foreignKey' => 'productitem_id'
+	  ]
+	];
+	public $hasMany = [
+	 'user_avatars' => [
+	  	'className' => 'user_avatars',
+	  	'foreignKey' => 'productitem_id'
 	  ]
 	];
 

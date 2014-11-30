@@ -4,6 +4,6 @@
 
 	<?= $this->Form->input( 'name', ['name', 'placeholder' => 'Size name'] ); ?>
 
-	<?= $this->form->submit( 'Edit size' )?>
+	<?= $this->form->submit( 'Save' )?>
 
 <?php echo $this->Form->end(); ?>

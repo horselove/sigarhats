@@ -6,7 +6,7 @@
   <?= $this->Form->textarea( 'address',['address', 'placeholder' => 'Address of the reseller', 'id' => 'js-reactor-editor'] ); ?>
   you can inore image upload and website if needed
   <?php echo $this->Form->input('img', [ 'type' => 'file' ]); ?>
-  Remember no http://www
+  ex. sigarhats.dk
   <?= $this->Form->input( 'url', [ 'url', 'placeholder' => 'url of the website'] ); ?>
 
   <?= $this->Form->submit( 'Insert reseller' )?>

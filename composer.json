@@ -6,7 +6,8 @@
         "josegonzalez/cakephp-upload": "1.1.1",
         "cakephp/cakephp": "2.5.*",
         "friendsofcake/crud" : "3.*",
-        "cakephp/debug_kit": "2.2.*"
+        "cakephp/debug_kit": "2.2.*",
+        "FriendsOfCake/search": "dev-master"
     },
     "config": {
         "vendor-dir": "Vendor/"
