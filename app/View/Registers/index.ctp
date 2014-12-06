@@ -5,6 +5,8 @@
        <div class="large-6 columns">
 
         <?php
+        echo $this->Session->flash();
+                
             echo $this->Form->create('Register', [
                 'method' => 'post',
                 'controller' => 'register'

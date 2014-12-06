@@ -10,19 +10,16 @@
 
 
 
-  <div>
-    <?php foreach($filmtypes as $filmtype): ?><br>
-    <?= $filmtype; ?>
-
-      <?php foreach($films as $film): ?><br>
-        <?= var_dump($film); ?>
-
-      <?php endforeach; ?>
-      <br><br>
-   <?php endforeach; ?>
-
-  </div>
-
-
-
+<div>
+<?php
+$filmTypeId = 0;
+  foreach($films as $film):
+    if($film['filmtype']['id'] != $filmTypeId) {
+      echo '<h2>'. $film['filmtype']['name'].'</h2>';
+    }
+    echo $film['Film']['embed_url'].'<br>';
+  $filmTypeId = $film['filmtype']['id'];
+  endforeach;
+?>
+</div>
 </select>

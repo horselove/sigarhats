@@ -9,29 +9,31 @@ App::uses('AppModel', 'Model');
 
 class Product extends AppModel
 {
-//beforeValidate
 	public function beforeValidate($options = []) {
 
 		return parent::beforeValidate($options);
 	}
 
+
 	public $belongsTo = [
 		'concepts' => [
 			'className' => 'concepts',
-			'foreignKey' => 'concept_id'
+			'foreignKey' => 'concept_id',
+                    'order'=>'Product.featured DESC,Product.id DESC'
 		],
 		'collections' => [
 			'className' => 'collections',
-			'foreignKey' => 'concept_id'
-		],
-		'images' => [
-			'classname' => 'images',
-			'foreignKey' => 'id'
+			'foreignKey' => 'collection_id'
 		]
 	];
 	public $hasMany = [
 		'productitems' => [
 			'claseName' => 'productitems',
+			'foreignKey' => 'product_id',
+                    'alias'=>'Productitem'
+		],
+		'images' => [
+			'classname' => 'images',
 			'foreignKey' => 'product_id'
 		]
 	];
@@ -46,7 +48,4 @@ class Product extends AppModel
 			'joinTable' => 'productitems'
 		],
 	];
-
-
-
 }

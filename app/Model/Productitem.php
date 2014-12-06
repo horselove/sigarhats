@@ -29,6 +29,11 @@ class Productitem extends AppModel {
 	  	'foreignKey' => 'productitem_id'
 	  ]
 	];
+        
+        public function getByNecklable($necklableId)
+        {
+            return $this->query('SELECT * FROM productitems WHERE necklable_id="'.$necklableId.'" LIMIT 1');
+        }
 
 
 }

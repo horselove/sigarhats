@@ -10,8 +10,10 @@ App::uses('AppController', 'Controller');
 
 class ProductsController extends AppController
 {
-	public $helpers = array('Html', 'form'); //include additional helpers using the global $helpers
-
+	public $helpers = ['Html', 'form']; //include additional helpers using the global $helpers
+  public $uses = ['Product','Size','Concept','Collection','Image'];
+  public $components = ['Paginator'];
+  public $paginate = ['limit' => 9];
 
 	public function beforeFilter() {
 
@@ -26,18 +28,56 @@ class ProductsController extends AppController
 	}
 
 	public function index() {
-		parent::beforeFilter();
+		//parent::beforeFilter();
+    $sizes = $this->Size->getAll();
+    $this->set('sizes', $sizes);
+    $concepts = $this->Concept->getAll();
+    $this->set('concepts', $concepts);
+    $collections = $this->Collection->getAll();
+    $this->set('collections', $collections);
 
-	  $products = $this->paginate();
+    $arrConditions = [];
+    if($this->request->is('post')) {
+      if(!empty($this->request->data['Product']['size_id'])) {
+          //$arrConditions['productitems.size_id']=$this->request->data['Product']['size_id'];
+      }
+      if(!empty($this->request->data['Product']['concept_id'])) {
+          $arrConditions['Product.concept_id'] = $this->request->data['Product']['concept_id'];
+      }
+      if(!empty($this->request->data['Product']['collection_id'])) {
+          $arrConditions['Product.collection_id'] = $this->request->data['Product']['collection_id'];
+      }
+    }
 
-	  if ($this->request->is('requested')) {
-	      return $products;
-	  } else {
-	      $this->set('posts', $products);
-	  }
+    $this->paginate= ['limit' => 9,'conditions'=>$arrConditions];
 
-		return $this->Crud->execute();
+    $this->Paginator->settings = $this->paginate;
 
+    // similar to findAll(), but fetches paged results
+    $products = $this->Paginator->paginate('Product');
+    $arrproducts = $products;
+
+    if (!empty($this->request->data['Product']['size_id'])
+    	&& $this->request->data['Product']['size_id'] > 0) {
+        $cnt =- 1;
+        $products = [];
+
+      foreach ($arrproducts as $pro) {
+        foreach ($pro['productitems'] as $pi) {
+          if(!empty($pi['size_id']))
+          {
+            if($pi['size_id']==$this->request->data['Product']['size_id'])
+            {
+              $products[++$cnt]=$pro;
+            }
+          }
+        }
+      }
+    }
+
+    $this->set('products', $products);
+    $this->set('images',  $this->Image->getAll());
+    return $products;
 	}
 
 	public function view ($id = null) {
@@ -52,24 +92,16 @@ class ProductsController extends AppController
 	    return $this->Crud->execute();
 	}
 
-//testing page
-	public function landingpage() {
-	  $products = $this->paginate();
-
-	  if ($this->request->is('requested')) {
-	      return $products;
-	  } else {
-	      $this->set('posts', $products);
-	  }
-
-	}
-
 
 /**
 *	Admin
 *
 */
+
 	public function admin_index() {
+		$this->paginate = [];
+		$this->paginate['limit'] = 10;
+
 		return $this->Crud->execute();
 
 	}
@@ -77,7 +109,7 @@ class ProductsController extends AppController
 	public function admin_add(){
 
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
-			return $this->redirect('/products/admin_index');
+			return $this->redirect('/images/admin_add/'.$this->Product->id);
 		});
 
 		return $this->Crud->execute();
@@ -105,6 +137,8 @@ class ProductsController extends AppController
 		return $this->redirect(array('action' => 'admin_index'));
 	}
 
+//featured item
+
 	public function featured ($id = null) {
 		$this->Product->id = $id;
 
@@ -117,7 +151,6 @@ class ProductsController extends AppController
 			return $this->redirect(array('action' => 'admin_index', 'controller' => 'products'));
 		}
 	}
-//unselling item
 	public function unfeatured ($id = null) {
 		$this->Product->id = $id;
 

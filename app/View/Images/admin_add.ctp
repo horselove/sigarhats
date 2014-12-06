@@ -1,36 +1,17 @@
 <?php
-echo $this->Form->create('Image',
-    ['url' => ['controller' => 'images',
-    'action' => 'admin_add', 'ext' => 'json'],
-    'type' => 'file', 'id' => 'imageform']);
+$productsId = $this->params['pass'];
 
-  echo $this->Form->file('file', ['id' => 'image', 'class' => 'hidden']);
-  echo $this->Form->hidden('product_id', ['value' => Hash::get($_GET, 'foreign_id')]);
-  echo $this->Form->label('', 'Change photo', ['for' => 'image', 'class' => 'button button--medium raised tertiary']);
+echo $this->Form->create('Image', ['type' => 'file']);
 
-echo $this->Form->end();
+  echo $this->Form->input('product_id', ['label' => 'Model', 'value' => $productsId, 'id' => 'productId']);
+echo 'Featured '.$this->Form->checkbox('feature_images', array('label' => 'Featured','hiddenField' => false));
+  echo $this->Form->input('title', ['placeholder' => 'Images title']);
+  
+
+  echo $this->Form->file('img', ['id' => 'image', 'class' => 'hidden']);
+  
+
+echo $this->Form->end(__('Insert image'));
 ?>
 
-<div id="loading" class="hide">Loading...</div>
-<div id="error" class="hide">An error occured, please try again.</div>
-
-<script type="text/javascript">
-  var callback = '<?= $_GET['callback']; ?>';
-  $(document).ready(function() {
-      $("#imageform").ajaxForm({
-          dataType: 'json',
-          success: function (response) {
-              $('#loading, #error').hide();
-              if (!response.success) {
-                  return $('#error').show();
-              }
-              parent[callback].call(this, response.data);
-          }
-      });
-      $('#image').on('change', function () {
-          $("#loading").show();
-          $("#imageform").submit();
-      });
-  });
-</script>
-
+<?= $this->element('viewimages'); ?>
