@@ -2,7 +2,20 @@
 class ResellersController extends AppController {
 
 	public function index() {
+
+	 $resellers = $this->paginate();
+	 if ($this->request->is('requested')) {
+	      return $resellers;
+	  } else {
+	      $this->set('posts', $images);
+	  }
 		return $this->Crud->execute();
+	}
+	public function view ($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__('Invalid product'));
+    }
+    return $this->Crud->execute();
 	}
 	public function admin_index() {
 		return $this->Crud->execute();

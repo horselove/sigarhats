@@ -35,7 +35,20 @@ App::uses('CakeEmail', 'Network/Email');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+/**
+ * Make Crud plugin able of hijacking requests
+ */
+	use CrudControllerTrait;
 
+	public $helpers = [
+		'Html',
+		'Form',
+	];
+
+	public $settings = [
+		'paramType' => 'querystring'
+	];
+	
 	public $components = [
 	  'RequestHandler',
 	  'Session',

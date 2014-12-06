@@ -27,9 +27,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
-    echo $this->Html->meta('');
     echo $this->Html->css('main');
     echo $this->fetch('meta');
+    echo $this->Html->meta(
+        'favicon.ico',
+        '/favicon.ico',
+        array('type' => 'icon')
+    );
     echo $this->fetch('script');
     ?>
 </head>
@@ -45,10 +49,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
 
-    <!-- Sql dumb for data -->
+    <!-- Sql dumb for data
     <?= $this->element('all_data'); ?>
     <?= $this->element('sql_dump'); ?>
-
+  -->
     <!-- Lé javascripts -->
     <?php
     echo $this->Html->script('vendor');

@@ -3,7 +3,7 @@
 
 class Filmtype extends AppModel {
 
-	public $belongsTo = [
+	public $hasOne = [
 		'film' => [
 			'className' => 'films',
 			'foreignKey' => 'filmType'

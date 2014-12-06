@@ -18,7 +18,8 @@ class Film extends AppModel {
 		'filmtype' => [
 			'className' => 'filmtype',
 			'foreignKey' => 'filmType',
-			'type' => 'inner'
+			'type' => 'inner',
+      'order'=>'filmtype.id ASC'
 		]
 	];
 
