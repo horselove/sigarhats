@@ -33,7 +33,7 @@ public function index($id=0) {
                 }
             }
         $arr=$this->Productitem->getByNecklable($necklableId);
-        if(!empty($arr))            
+        if(!empty($arr))
         {
             $dat=array();
             if(!empty($this->request->data['Register']['registercap']) && $this->request->data['Register']['registercap']!='')
@@ -42,7 +42,7 @@ public function index($id=0) {
                     'name'=>$this->request->data['Register']['name'],
                     'location'=>$this->request->data['Register']['location'],
                     'birth'=>$this->request->data['Register']['birth'],
-                    'gender'=>$this->request->data['Register']['gender'],
+                    'profession'=>$this->request->data['Register']['profession'],
                     'email'=>$this->request->data['Register']['email'],
                     'productitem_id'=>$this->request->data['Register']['productitem_id'],
                 ));
@@ -60,7 +60,7 @@ public function index($id=0) {
                     $arrSave['RegisteredCap']['image_url']=$this->Uploading->uploadImage($_FILES,  'uploads/images/registered_caps/');
                 }
                 $this->RegisteredCap->save($arrSave);
-            }            
+            }
             $this->set('data',  $this->RegisteredCap->find('first',array('conditions'=>array('productitem_id'=>$arr[0]['productitems']['id']))));
             $this->set('necklableId',$arr[0]['productitems']['necklable_id']);
             $this->set('productItemId',$arr[0]['productitems']['id']);
@@ -71,7 +71,7 @@ public function index($id=0) {
             $this->Session->setFlash('Invalid necklabel !');
             return $this->redirect('/registers');
         }
-   
+
 	}
 
 

@@ -24,7 +24,7 @@ class Image extends AppModel {
   {
       $results = $this->query('SELECT * FROM images Image WHERE feature_images = 1');
       foreach ($results as $result) {
-          $arr[$result['Image']['product_id']]=$result;
+          $arr[$result['Image']['product_id']] = $result;
       }
       return $arr;
   }

@@ -42,15 +42,19 @@ class ImagesController extends AppController {
 
 	public function admin_delete ($id = null) {
 		$this->Image->id = $id;
+
+
 		if (!$this->Image->exists()) {
 			throw new NotFoundException('Invalid Image');
 		}
 		if ($this->Image->delete()) {
-			$this->Session->setFlash('The Image has been deleted.');
+			$this->Session->setFlash('deleted');
 		} else {
 			$this->Session->setFlash('The Image could not be deleted. Please, try again.');
 		}
-		return $this->redirect($this->request->here());
+ 				return $this->redirect('/admin_delete/'.$this->image->belongsTo['Product']['product_id']);
+
+
 	}
 
 }
