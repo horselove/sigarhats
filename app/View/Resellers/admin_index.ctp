@@ -31,7 +31,10 @@
   </td>
   <td>
   <?= $this->Html->link( 'Edit', [ 'action' => 'admin_edit/', $reseller['Reseller']['id'] ], ['class' => ''] );?> /
-  <?= $this->Html->link( 'Delete', [ 'action' => 'admin_delete/', $reseller['Reseller']['id'] ], ['class' => ''] );?></td>
+  <?php if ( $resllerid != 1 ): ?>
+    <?= $this->Html->link( 'Delete', [ 'action' => 'admin_delete/', $reseller['Reseller']['id'] ], ['class' => ''] );?></td>
+  <?php endif; ?>
+
 </tr>
 <?php endforeach; ?>
 

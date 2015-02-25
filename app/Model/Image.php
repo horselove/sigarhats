@@ -26,7 +26,9 @@ class Image extends AppModel {
       foreach ($results as $result) {
           $arr[$result['Image']['product_id']] = $result;
       }
-      return $arr;
+      if(isset($arr)){
+ 	      return $arr;
+      }
   }
 }
 ?>
