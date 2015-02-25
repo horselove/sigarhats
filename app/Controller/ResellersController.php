@@ -2,24 +2,28 @@
 class ResellersController extends AppController {
 
 	public function index() {
+	  $resellers = $this->paginate();
 
-	 $resellers = $this->paginate();
-	 if ($this->request->is('requested')) {
+	  if ($this->request->is('requested')) {
 	      return $resellers;
-	  } else {
+		}
+		else {
 	      $this->set('posts', $images);
 	  }
 		return $this->Crud->execute();
 	}
+
 	public function view ($id = null) {
     if (!$id) {
-        throw new NotFoundException(__('Invalid product'));
+      throw new NotFoundException(__('Invalid product'));
     }
     return $this->Crud->execute();
 	}
+
 	public function admin_index() {
 		return $this->Crud->execute();
 	}
+
 	public function admin_add() {
 		$this->Crud->on('afterSave', function (CakeEvent $event) {
 			return $this->redirect('/resellers/admin_index');

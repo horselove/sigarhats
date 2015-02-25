@@ -37,6 +37,7 @@ class ProductsController extends AppController
     $this->set('collections', $collections);
 
     $arrConditions = [];
+
     if($this->request->is('post')) {
       if(!empty($this->request->data['Product']['size_id'])) {
           //$arrConditions['productitems.size_id']=$this->request->data['Product']['size_id'];
@@ -49,7 +50,7 @@ class ProductsController extends AppController
       }
     }
 
-    $this->paginate= ['limit' => 9,'conditions'=>$arrConditions];
+    $this->paginate= ['limit' => 9,'conditions' => $arrConditions];
 
     $this->Paginator->settings = $this->paginate;
 
@@ -99,8 +100,10 @@ class ProductsController extends AppController
 */
 
 	public function admin_index() {
-		$this->paginate = [];
-		$this->paginate['limit'] = 10;
+
+		$this->Crud->on('beforePaginate', function (CakeEvent $event) {
+			$event->subject->paginator->settings['limit'] = 1000;
+		});
 
 		return $this->Crud->execute();
 

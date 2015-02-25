@@ -11,8 +11,7 @@
     <div class="medium-6 columns ws-xlarge product-view--content">
         <h1 class="large-leading product-view__title"><?= $product['Product']['name']; ?></h1>
         <p class="small-leading product-view__concept"><?= $product['concepts']['name']; ?></p>
-        <p class="price product-view__status">
-
+        <p class="price product-view__status"> List of made products:
           <?php $count = 0; ?>
           <?php foreach ($product['productitems'] as $productitem): ?>
             <li>
