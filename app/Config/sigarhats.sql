@@ -3,10 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: localhost:8889
--- Genereringstid: 06. 12 2014 kl. 13:40:57
+-- Genereringstid: 25. 02 2015 kl. 20:56:13
 -- Serverversion: 5.5.38
 -- PHP-version: 5.6.2
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -25,17 +26,16 @@ SET time_zone = "+00:00";
 -- Struktur-dump for tabellen `collections`
 --
 
-CREATE TABLE "collections" (
-"id" int(11) NOT NULL,
-  "name" varchar(28) COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `collections` (
+`id` int(11) NOT NULL,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `collections`
 --
 
 INSERT INTO `collections` (`id`, `name`) VALUES
-(1, '2014'),
 (2, '2013');
 
 -- --------------------------------------------------------
@@ -44,11 +44,11 @@ INSERT INTO `collections` (`id`, `name`) VALUES
 -- Struktur-dump for tabellen `concepts`
 --
 
-CREATE TABLE "concepts" (
-"id" int(11) NOT NULL,
-  "name" varchar(28) COLLATE utf8_unicode_ci NOT NULL,
-  "description" text COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `concepts` (
+`id` int(11) NOT NULL,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `concepts`
@@ -64,14 +64,14 @@ INSERT INTO `concepts` (`id`, `name`, `description`) VALUES
 -- Struktur-dump for tabellen `contacts`
 --
 
-CREATE TABLE "contacts" (
-"id" int(11) NOT NULL,
-  "name" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "subejct" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "email" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "message" text COLLATE utf8_unicode_ci NOT NULL,
-  "created" datetime NOT NULL
-);
+CREATE TABLE `contacts` (
+`id` int(11) NOT NULL,
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `subejct` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `message` text COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -79,14 +79,14 @@ CREATE TABLE "contacts" (
 -- Struktur-dump for tabellen `films`
 --
 
-CREATE TABLE "films" (
-"id" int(28) NOT NULL,
-  "title" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "embed_url" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "img" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "filmType" int(11) NOT NULL,
-  "landingpage" int(11) NOT NULL
-);
+CREATE TABLE `films` (
+`id` int(28) NOT NULL,
+  `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `embed_url` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `filmType` int(11) NOT NULL,
+  `landingpage` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `films`
@@ -103,10 +103,10 @@ INSERT INTO `films` (`id`, `title`, `embed_url`, `img`, `filmType`, `landingpage
 -- Struktur-dump for tabellen `filmtypes`
 --
 
-CREATE TABLE "filmtypes" (
-"id" int(11) NOT NULL,
-  "name" varchar(128) COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `filmtypes` (
+`id` int(11) NOT NULL,
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `filmtypes`
@@ -122,20 +122,22 @@ INSERT INTO `filmtypes` (`id`, `name`) VALUES
 -- Struktur-dump for tabellen `images`
 --
 
-CREATE TABLE "images" (
-"id" int(11) NOT NULL,
-  "img" varchar(260) COLLATE utf8_unicode_ci NOT NULL,
-  "title" varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  "product_id" varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  "feature_images" int(11) NOT NULL
-);
+CREATE TABLE `images` (
+`id` int(11) NOT NULL,
+  `img` varchar(260) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `product_id` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `feature_images` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `images`
 --
 
 INSERT INTO `images` (`id`, `img`, `title`, `product_id`, `feature_images`) VALUES
-(30, '1378300103693912416.JPG', 'asdasd', '102', 1);
+(1, 'IMG_2325.JPG', 'yoyo', '111', 0),
+(2, 'IMG_2303.PNG', 'hehH', '111', 1),
+(4, '_DSC0505.JPG', '', '112', 1);
 
 -- --------------------------------------------------------
 
@@ -143,12 +145,12 @@ INSERT INTO `images` (`id`, `img`, `title`, `product_id`, `feature_images`) VALU
 -- Struktur-dump for tabellen `materials`
 --
 
-CREATE TABLE "materials" (
-"id" int(11) NOT NULL,
-  "name" varchar(28) COLLATE utf8_unicode_ci NOT NULL,
-  "img" varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  "dir" varchar(255) COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `materials` (
+`id` int(11) NOT NULL,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dir` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `materials`
@@ -165,25 +167,28 @@ INSERT INTO `materials` (`id`, `name`, `img`, `dir`) VALUES
 -- Struktur-dump for tabellen `productitems`
 --
 
-CREATE TABLE "productitems" (
-"id" int(11) NOT NULL,
-  "product_id" int(11) NOT NULL,
-  "created" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  "number" varchar(126) COLLATE utf8_unicode_ci NOT NULL,
-  "size_id" int(11) NOT NULL,
-  "necklable_id" varchar(28) COLLATE utf8_unicode_ci NOT NULL,
-  "reseller_id" int(11) NOT NULL,
-  "sold" int(11) NOT NULL
-);
+CREATE TABLE `productitems` (
+`id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `number` varchar(126) COLLATE utf8_unicode_ci NOT NULL,
+  `size_id` int(11) NOT NULL,
+  `necklable_id` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `reseller_id` int(11) NOT NULL,
+  `sold` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `productitems`
 --
 
 INSERT INTO `productitems` (`id`, `product_id`, `created`, `number`, `size_id`, `necklable_id`, `reseller_id`, `sold`) VALUES
-(10, 101, '2014-12-06 12:00:35', '12', 2, '0027-101', 1, 1),
+(10, 101, '2015-02-25 15:17:43', '12', 2, '0027-101', 1, 1),
 (11, 102, '2014-12-05 11:37:09', '22', 1, '1020-102', 1, 0),
-(12, 101, '2014-12-05 11:48:51', 'wew', 1, '1723-101', 9, 0);
+(12, 101, '2014-12-06 14:35:15', 'wew', 1, '1723-101', 1, 0),
+(13, 111, '2015-02-25 14:58:20', '12', 1, '7889-111', 1, 0),
+(14, 112, '2015-02-25 19:21:36', '1', 1, '3073-112', 1, 1),
+(15, 112, '2015-02-25 19:32:41', 'asdasd', 1, '3210-112', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -191,17 +196,17 @@ INSERT INTO `productitems` (`id`, `product_id`, `created`, `number`, `size_id`, 
 -- Struktur-dump for tabellen `products`
 --
 
-CREATE TABLE "products" (
-"id" int(11) NOT NULL,
-  "concept_id" int(11) NOT NULL,
-  "collection_id" int(11) NOT NULL,
-  "name" varchar(28) COLLATE utf8_unicode_ci NOT NULL,
-  "description" text COLLATE utf8_unicode_ci NOT NULL,
-  "version" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "price" float NOT NULL,
-  "active" int(1) NOT NULL,
-  "featured" int(1) NOT NULL
-);
+CREATE TABLE `products` (
+`id` int(11) NOT NULL,
+  `concept_id` int(11) NOT NULL,
+  `collection_id` int(11) NOT NULL,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `version` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `price` float NOT NULL,
+  `active` int(1) NOT NULL,
+  `featured` int(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `products`
@@ -209,7 +214,17 @@ CREATE TABLE "products" (
 
 INSERT INTO `products` (`id`, `concept_id`, `collection_id`, `name`, `description`, `version`, `price`, `active`, `featured`) VALUES
 (101, 1, 1, 'silas', '<p>den er god</p>', '1', 22, 1, 1),
-(102, 2, 1, 'model 2', '<p>wool cap</p>', 'wool ', 3, 1, 0);
+(102, 2, 1, 'model 2', '<p>wool cap</p>', 'wool ', 3, 1, 1),
+(103, 1, 1, 'asdasd', '<p>dsadasda</p>', 'asdasda', 21121, 1, 0),
+(104, 1, 2, 'wqwe', 'qeqwe', 'dsada', 22, 1, 0),
+(105, 1, 1, 'asda', 'adasdad', '232', 232, 1, 1),
+(106, 1, 1, 'sada', 'adds', 'edass', 232, 1, 0),
+(107, 1, 1, 'asd', 'asdasd', 'asdasd', 32, 1, 0),
+(108, 1, 1, 'asdad', 'asdad', 'asdas', 232, 1, 1),
+(109, 1, 2, 'ewsda', 'asdasd', 'asdasd', 22, 1, 1),
+(110, 1, 1, 'sadasd', 'asdas', '12', 2, 1, 0),
+(111, 1, 2, 'asdasd', 'dasdad', 'sadd', 22, 1, 1),
+(112, 1, 1, 'test', '<p>sadasdasdaa</p>', '12', 123, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -217,16 +232,24 @@ INSERT INTO `products` (`id`, `concept_id`, `collection_id`, `name`, `descriptio
 -- Struktur-dump for tabellen `registered_caps`
 --
 
-CREATE TABLE "registered_caps" (
-"id" int(11) NOT NULL,
-  "name" varchar(100) DEFAULT NULL,
-  "location" varchar(250) DEFAULT NULL,
-  "birth" varchar(20) DEFAULT NULL,
-  "gender" varchar(20) DEFAULT NULL,
-  "email" varchar(50) DEFAULT NULL,
-  "image_url" varchar(100) DEFAULT NULL,
-  "productitem_id" int(11) DEFAULT NULL
-);
+CREATE TABLE `registered_caps` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `location` varchar(250) DEFAULT NULL,
+  `birth` varchar(20) DEFAULT NULL,
+  `profession` varchar(140) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `image_url` varchar(100) DEFAULT NULL,
+  `productitem_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `registered_caps`
+--
+
+INSERT INTO `registered_caps` (`id`, `name`, `location`, `birth`, `profession`, `email`, `image_url`, `productitem_id`) VALUES
+(1, 'Adam ', 'Denmark', '1990', 'jonny', 'hey@gmail.com', 'uploads/images/registered_caps/1417875628.jpg', 10),
+(2, 'fhbcvbcvbcv', 'iojil', '', 'dsaasd', 'gmail@fmg.dj', 'uploads/images/registered_caps/1424891741.jpg', 14);
 
 -- --------------------------------------------------------
 
@@ -234,23 +257,21 @@ CREATE TABLE "registered_caps" (
 -- Struktur-dump for tabellen `resellers`
 --
 
-CREATE TABLE "resellers" (
-"id" int(11) NOT NULL,
-  "name" varchar(120) COLLATE utf8_unicode_ci NOT NULL,
-  "address" text COLLATE utf8_unicode_ci NOT NULL,
-  "img" varchar(120) COLLATE utf8_unicode_ci NOT NULL,
-  "url" varchar(120) COLLATE utf8_unicode_ci NOT NULL,
-  "ordernumber" int(11) NOT NULL
-);
+CREATE TABLE `resellers` (
+`id` int(11) NOT NULL,
+  `name` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `address` text COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `ordernumber` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `resellers`
 --
 
 INSERT INTO `resellers` (`id`, `name`, `address`, `img`, `url`, `ordernumber`) VALUES
-(1, 'Sigar hats & caps basement', '<p>Glentevej</p>', '1378300103693912416.JPG', 'sigarhats.com', 1),
-(9, 'john', '<p style="margin-left: 20px;">johnjohn</p><p style="margin-left: 60px;">kdk</p>', '29343666@N02.jpg', 'www.suckgogogo.com', 0),
-(10, 'John store', '<p style="margin-left: 20px;">Ã¸rnevej 450 st tv</p>', '34789654@N02.jpg', 'pornhub.com', 0),
+(1, 'Sigar hats & caps basement', '<p><strong>Glentevej</strong></p><p><strong>239239</strong></p><p><strong>weqw</strong></p>', '1378300103693912416.JPG', 'sigarhats.com', 1),
 (11, 'asdasd', '<p>asdasdasdasdasdas</p>', '', '', 0);
 
 -- --------------------------------------------------------
@@ -259,10 +280,10 @@ INSERT INTO `resellers` (`id`, `name`, `address`, `img`, `url`, `ordernumber`) V
 -- Struktur-dump for tabellen `sizes`
 --
 
-CREATE TABLE "sizes" (
-"id" int(11) NOT NULL,
-  "name" varchar(28) COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `sizes` (
+`id` int(11) NOT NULL,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `sizes`
@@ -278,12 +299,12 @@ INSERT INTO `sizes` (`id`, `name`) VALUES
 -- Struktur-dump for tabellen `stories`
 --
 
-CREATE TABLE "stories" (
-"id" int(11) NOT NULL,
-  "langues" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "headline" varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  "story" text COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `stories` (
+`id` int(11) NOT NULL,
+  `langues` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `headline` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `story` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `stories`
@@ -299,14 +320,14 @@ INSERT INTO `stories` (`id`, `langues`, `headline`, `story`) VALUES
 -- Struktur-dump for tabellen `users`
 --
 
-CREATE TABLE "users" (
-"id" int(10) unsigned NOT NULL,
-  "username" varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  "password" varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  "role" varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  "created" datetime DEFAULT NULL,
-  "modified" datetime DEFAULT NULL
-);
+CREATE TABLE `users` (
+`id` int(10) unsigned NOT NULL,
+  `username` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `role` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `users`
@@ -315,7 +336,10 @@ CREATE TABLE "users" (
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `created`, `modified`) VALUES
 (7, 'admin', '0c5ea0d43e32ac030dbf382d86286e0a55c3d5a3', 'admin', '2014-08-22 11:41:39', '2014-08-22 11:41:39'),
 (8, 'hej', '72486a429136038963d3e4d04636579e131fb1af', 'admin', '2014-08-26 10:50:34', '2014-08-26 10:50:34'),
-(9, 'john', '6cbcb4da9badd9d2dc62d3dafe2668a125d47ccd', 'admin', '2014-09-04 11:27:56', '2014-09-04 11:27:56');
+(9, 'john', '6cbcb4da9badd9d2dc62d3dafe2668a125d47ccd', 'admin', '2014-09-04 11:27:56', '2014-09-04 11:27:56'),
+(10, 'admin', '0c5ea0d43e32ac030dbf382d86286e0a55c3d5a3', 'admin', '2014-12-06 15:37:40', '2014-12-06 15:37:40'),
+(11, 'admin', '0c5ea0d43e32ac030dbf382d86286e0a55c3d5a3', 'admin', '2014-12-06 15:37:53', '2014-12-06 15:37:53'),
+(12, 'sigarhats@gmail.com', 'aea699c4a7176dc63674207fc24504b6cfc6ae90', 'admin', '2014-12-06 16:01:36', '2014-12-06 16:01:36');
 
 -- --------------------------------------------------------
 
@@ -323,17 +347,17 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `created`, `modified`
 -- Struktur-dump for tabellen `user_avatars`
 --
 
-CREATE TABLE "user_avatars" (
-"id" int(11) NOT NULL,
-  "name" varchar(38) COLLATE utf8_unicode_ci NOT NULL,
-  "location" varchar(38) COLLATE utf8_unicode_ci NOT NULL,
-  "birth" varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  "gender" varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  "email" varchar(38) COLLATE utf8_unicode_ci NOT NULL,
-  "img" varchar(38) COLLATE utf8_unicode_ci NOT NULL,
-  "productitem_id" int(11) NOT NULL,
-  "password" varchar(50) COLLATE utf8_unicode_ci NOT NULL
-);
+CREATE TABLE `user_avatars` (
+`id` int(11) NOT NULL,
+  `name` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `birth` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
+  `productitem_id` int(11) NOT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Data dump for tabellen `user_avatars`
@@ -352,91 +376,91 @@ INSERT INTO `user_avatars` (`id`, `name`, `location`, `birth`, `gender`, `email`
 -- Indeks for tabel `collections`
 --
 ALTER TABLE `collections`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `concepts`
 --
 ALTER TABLE `concepts`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `contacts`
 --
 ALTER TABLE `contacts`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `films`
 --
 ALTER TABLE `films`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `filmtypes`
 --
 ALTER TABLE `filmtypes`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `images`
 --
 ALTER TABLE `images`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `materials`
 --
 ALTER TABLE `materials`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `productitems`
 --
 ALTER TABLE `productitems`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `products`
 --
 ALTER TABLE `products`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `registered_caps`
 --
 ALTER TABLE `registered_caps`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `resellers`
 --
 ALTER TABLE `resellers`
- ADD PRIMARY KEY ("id"), ADD KEY "id" ("id");
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
 
 --
 -- Indeks for tabel `sizes`
 --
 ALTER TABLE `sizes`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `stories`
 --
 ALTER TABLE `stories`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `users`
 --
 ALTER TABLE `users`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks for tabel `user_avatars`
 --
 ALTER TABLE `user_avatars`
- ADD PRIMARY KEY ("id");
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Brug ikke AUTO_INCREMENT for slettede tabeller
@@ -446,77 +470,77 @@ ALTER TABLE `user_avatars`
 -- Tilføj AUTO_INCREMENT i tabel `collections`
 --
 ALTER TABLE `collections`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `concepts`
 --
 ALTER TABLE `concepts`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `contacts`
 --
 ALTER TABLE `contacts`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Tilføj AUTO_INCREMENT i tabel `films`
 --
 ALTER TABLE `films`
-MODIFY "id" int(28) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(28) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- Tilføj AUTO_INCREMENT i tabel `filmtypes`
 --
 ALTER TABLE `filmtypes`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Tilføj AUTO_INCREMENT i tabel `images`
 --
 ALTER TABLE `images`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Tilføj AUTO_INCREMENT i tabel `materials`
 --
 ALTER TABLE `materials`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Tilføj AUTO_INCREMENT i tabel `productitems`
 --
 ALTER TABLE `productitems`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- Tilføj AUTO_INCREMENT i tabel `products`
 --
 ALTER TABLE `products`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=113;
 --
 -- Tilføj AUTO_INCREMENT i tabel `registered_caps`
 --
 ALTER TABLE `registered_caps`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `resellers`
 --
 ALTER TABLE `resellers`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- Tilføj AUTO_INCREMENT i tabel `sizes`
 --
 ALTER TABLE `sizes`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `stories`
 --
 ALTER TABLE `stories`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `users`
 --
 ALTER TABLE `users`
-MODIFY "id" int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Tilføj AUTO_INCREMENT i tabel `user_avatars`
 --
 ALTER TABLE `user_avatars`
-MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
